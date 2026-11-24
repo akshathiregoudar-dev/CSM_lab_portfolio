@@ -1,0 +1,1778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction Site Management Practice — Akshat S Hiregoudar</title>
+    <!-- Google Fonts: Inter & Oswald for bold architectural display typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        stoneBg: '#F4F1EA',
+                        stoneCard: '#EBE6DC',
+                        stoneBorder: '#DCD5C9',
+                        charcoal: '#231F1D',
+                        charcoalSoft: '#3A3532',
+                        taupe: '#7A7267',
+                        sand: '#D8CFC2',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Oswald', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body {
+            background-color: #F4F1EA;
+            color: #231F1D;
+            overflow-x: hidden;
+        }
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #EBE6DC; }
+        ::-webkit-scrollbar-thumb { background: #7A7267; border-radius: 4px; }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-charcoal selection:text-stoneBg">
+
+    <!-- Minimalist Top Navigation Bar -->
+    <header class="sticky top-0 z-40 bg-stoneBg/95 backdrop-blur-md border-b border-stoneBorder">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 h-16 flex items-center justify-between">
+            <button onclick="switchPage('portfolio')" class="flex items-center gap-2 text-left group">
+                <span class="font-display text-xl sm:text-2xl font-bold tracking-tight uppercase">AKSHAT HIREGOUDAR</span>
+                <span class="hidden sm:inline-block text-[11px] font-mono uppercase tracking-widest text-taupe border-l border-stoneBorder pl-2.5">
+                    01FE23BCV042 • KLE TECH
+                </span>
+            </button>
+
+            <nav class="flex items-center gap-6 sm:gap-8 text-xs font-semibold uppercase tracking-[0.18em]">
+                <button id="nav-portfolio" onclick="switchPage('portfolio')" class="py-1 border-b-2 border-charcoal text-charcoal transition">
+                    Portfolio
+                </button>
+                <button id="nav-about" onclick="switchPage('about')" class="py-1 border-b-2 border-transparent text-taupe hover:text-charcoal transition">
+                    About
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- =====================================================================
+         PAGE 1: PORTFOLIO VIEW
+         ===================================================================== -->
+    <main id="portfolio-page">
+        <!-- Editorial Hero Banner -->
+        <section class="relative w-full min-h-[70vh] sm:min-h-[80vh] flex flex-col justify-between overflow-hidden bg-charcoal text-stoneBg">
+            <img
+                src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1800&q=80"
+                onerror="this.onerror=null;this.src='https://placehold.co/1800x950/3A3532/F4F1EA?text=Construction+Site+Management+Practice';"
+                alt="Architectural Construction Site"
+                class="absolute inset-0 w-full h-full object-cover opacity-50 scale-105"
+            >
+            <div class="absolute inset-0 bg-gradient-to-b from-charcoal/65 via-charcoal/25 to-charcoal/90"></div>
+
+            <!-- Edge-to-Edge Title -->
+            <div class="relative z-10 w-full px-3 sm:px-8 pt-6 sm:pt-10 text-center">
+                <p class="text-[10px] sm:text-xs font-mono uppercase tracking-[0.25em] text-sand mb-2">
+                    SEVENTH SEMESTER • CIVIL ENGINEERING LABORATORY PORTFOLIO
+                </p>
+                <h1 class="font-display font-bold uppercase text-white tracking-[-0.02em] leading-[0.94] text-[6.8vw] sm:text-[4.8vw] lg:text-[4.3vw] whitespace-normal sm:whitespace-nowrap select-none drop-shadow-sm">
+                    CONSTRUCTION SITE MANAGEMENT PRACTICE
+                </h1>
+            </div>
+
+            <!-- Bottom Course Objective Overlay -->
+            <div class="relative z-10 max-w-7xl w-full mx-auto px-4 sm:px-8 pb-8 sm:pb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <div class="bg-charcoal/85 backdrop-blur-md border border-white/15 rounded-xl p-4 sm:p-5 max-w-xl shadow-xl">
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                        <span class="text-[11px] font-mono uppercase tracking-widest text-sand">Course Objective</span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-stoneBg/90 leading-relaxed">
+                        Gain practical engineering experience by solving simulated complex site management challenges—covering statutory RERA &amp; municipal paperwork, automated material control, surveying plans, steel &amp; formwork optimization, stage-wise labour planning, and concrete QA/QC investigation.
+                    </p>
+                </div>
+
+                <div class="flex flex-col sm:items-end gap-2 shrink-0">
+                    <span class="text-[11px] uppercase tracking-[0.22em] text-sand font-medium">Hubballi, Karnataka • 8-Acre Commercial Mall Project</span>
+                    <a href="#problem-index" class="inline-flex items-center justify-center gap-2 bg-stoneBg text-charcoal hover:bg-sand transition px-4 py-2.5 rounded-lg text-[11px] font-semibold uppercase tracking-[0.14em] whitespace-nowrap">
+                        <span>Explore 6 Problem Statements</span>
+                        <span>↓</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Statement Index Selector Strip -->
+        <section id="problem-index" class="max-w-7xl mx-auto px-4 sm:px-8 pt-10 pb-6">
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-8 gap-4">
+                <div>
+                    <span class="text-[11px] uppercase tracking-[0.22em] text-taupe font-semibold block">Laboratory Index</span>
+                    <h2 class="font-display text-2xl sm:text-3xl lg:text-4xl uppercase tracking-tight font-bold text-charcoal mt-1 leading-normal">
+                        ALL, PS-01 TO PS-06
+                    </h2>
+                </div>
+                <p class="text-xs text-taupe max-w-md lg:text-right leading-relaxed">
+                    Select any problem statement card below to view its Problem Statement, Minutes of Meeting logs, Technical Solutions &amp; Flowcharts, Reflection, and Conclusion.
+                </p>
+            </div>
+
+            <div id="problem-cards-grid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4"></div>
+        </section>
+
+        <!-- Active Problem Statement Showcase -->
+        <section id="active-workspace" class="max-w-7xl mx-auto px-4 sm:px-8 pb-20">
+            <div class="flex items-center justify-between border-y border-stoneBorder py-3 mb-8 text-xs text-taupe">
+                <div class="flex items-center gap-2 flex-wrap">
+                    <span class="uppercase tracking-wider">Portfolio</span>
+                    <span>/</span>
+                    <span id="breadcrumb-theme" class="uppercase tracking-wider">Site Planning</span>
+                    <span>/</span>
+                    <span id="breadcrumb-id" class="text-charcoal font-semibold">Problem Statement 01</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button onclick="navigateProblem(-1)" class="px-3 py-1.5 rounded-md border border-stoneBorder hover:bg-stoneCard text-charcoal transition">← Prev</button>
+                    <button onclick="navigateProblem(1)" class="px-3 py-1.5 rounded-md border border-stoneBorder hover:bg-stoneCard text-charcoal transition">Next →</button>
+                </div>
+            </div>
+
+            <!-- 1. PROBLEM STATEMENT (QUESTION) -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start mb-16">
+                <div class="lg:col-span-5">
+                    <div class="relative rounded-xl overflow-hidden bg-stoneCard border border-stoneBorder shadow-sm aspect-[4/3]">
+                        <img id="ps-hero-img" src="" alt="Engineering Visual" class="w-full h-full object-cover">
+                        <div class="absolute bottom-3 left-3 right-3 bg-charcoal/85 backdrop-blur-sm text-stoneBg px-3.5 py-2 rounded-lg flex items-center justify-between text-xs">
+                            <span id="ps-badge" class="font-mono uppercase tracking-wider text-sand">PS — 01</span>
+                            <span id="ps-scale" class="font-medium">8 Acres • 7 Blocks</span>
+                        </div>
+                    </div>
+                    <div id="ps-metrics-grid" class="grid grid-cols-3 gap-2.5 mt-3"></div>
+                </div>
+
+                <div class="lg:col-span-7 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between gap-4 mb-2">
+                            <span id="ps-tag" class="text-xs font-mono uppercase tracking-[0.2em] text-taupe">Module 01</span>
+                            <span id="ps-status" class="text-xs font-medium text-emerald-800 bg-emerald-100/80 border border-emerald-300 px-2.5 py-1 rounded">Completed Record</span>
+                        </div>
+                        <h2 id="ps-title" class="font-display text-3xl sm:text-4xl lg:text-5xl uppercase font-bold tracking-tight text-charcoal leading-[1.05] mb-3"></h2>
+                        <p id="ps-theme" class="text-sm sm:text-base font-medium text-charcoalSoft bg-stoneCard/80 border-l-4 border-charcoal px-4 py-3 rounded-r-lg mb-5"></p>
+                        <div class="bg-white/75 border border-stoneBorder rounded-xl p-5 sm:p-6 shadow-sm">
+                            <div class="flex items-center justify-between mb-3 pb-2 border-b border-stoneBorder">
+                                <span class="text-xs font-bold uppercase tracking-[0.18em] text-charcoal">1. Problem Statement (Brief &amp; Constraints)</span>
+                                <span class="text-[11px] font-mono text-taupe">SECTION 01</span>
+                            </div>
+                            <div id="ps-question-body" class="text-sm text-charcoalSoft leading-relaxed space-y-3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. MINUTES OF MEETING -->
+            <div class="mb-16">
+                <div class="mb-8">
+                    <h2 class="inline-block font-display text-3xl sm:text-5xl uppercase font-bold tracking-tight text-charcoal border-b-2 border-charcoal pb-2">
+                        MINUTES OF MEETING
+                    </h2>
+                </div>
+                <div id="mom-container" class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8"></div>
+            </div>
+
+            <!-- 3. TECHNICAL SOLUTIONS, FLOWCHARTS & SITE OBSERVATIONS -->
+            <div class="mb-16">
+                <div class="mb-8">
+                    <h2 class="inline-block font-display text-3xl sm:text-5xl uppercase font-bold tracking-tight text-charcoal border-b-2 border-charcoal pb-2">
+                        TECHNICAL SOLUTIONS
+                    </h2>
+                </div>
+                <div id="solutions-container" class="space-y-6"></div>
+            </div>
+
+            <!-- 4. REFLECTION & 5. CONCLUSION -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+                <div class="bg-white/80 border border-stoneBorder rounded-xl p-6 sm:p-8 shadow-sm">
+                    <div class="flex items-center justify-between mb-4 pb-3 border-b border-stoneBorder">
+                        <span class="text-xs font-mono uppercase tracking-[0.2em] text-taupe">Section 04</span>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-charcoal">Engineering Learning</span>
+                    </div>
+                    <h3 class="font-display text-2xl sm:text-3xl uppercase font-bold text-charcoal mb-4">Reflection</h3>
+                    <ul id="reflection-list" class="space-y-2.5 text-sm text-charcoalSoft leading-relaxed"></ul>
+                </div>
+
+                <div class="bg-charcoal text-stoneBg rounded-xl p-6 sm:p-8 shadow-md">
+                    <div class="flex items-center justify-between mb-4 pb-3 border-b border-white/15">
+                        <span class="text-xs font-mono uppercase tracking-[0.2em] text-sand">Section 05</span>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-sand">Final Synthesis</span>
+                    </div>
+                    <h3 class="font-display text-2xl sm:text-3xl uppercase font-bold text-white mb-4">Conclusion</h3>
+                    <ul id="conclusion-list" class="space-y-2.5 text-sm text-stoneBg/90 leading-relaxed"></ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- =====================================================================
+         PAGE 2: ABOUT ME SECTION
+         ===================================================================== -->
+    <main id="about-page" class="hidden max-w-5xl mx-auto px-4 sm:px-8 py-12 sm:py-16">
+        <div class="bg-white/85 border border-stoneBorder rounded-2xl p-6 sm:p-10 shadow-sm">
+            <div class="flex flex-col md:flex-row gap-8 items-start">
+                <!-- Author Photo Box (Loads "bio phote.jpeg" when saved in the same folder as index.html) -->
+                <div class="w-full md:w-64 shrink-0">
+                    <div class="aspect-[4/5] rounded-xl overflow-hidden bg-stoneCard border border-stoneBorder shadow-sm">
+                        <img
+                            id="about-profile-img"
+                            src="bio phote.jpeg"
+                            onerror="this.onerror=null;this.src='https://placehold.co/600x750/231F1D/F4F1EA?text=Akshat+S+Hiregoudar';"
+                            alt="Akshat S Hiregoudar"
+                            class="w-full h-full object-cover object-top"
+                        >
+                    </div>
+                    <div class="mt-3 p-3.5 rounded-xl bg-charcoal text-stoneBg text-xs space-y-1.5 font-mono font-bold">
+                        <p><span class="text-sand font-bold">ROLL NO:</span> <span class="text-white font-bold">123</span></p>
+                        <p><span class="text-sand font-bold">USN:</span> <span class="text-white font-bold">01FE23BCV042</span></p>
+                        <p><span class="text-sand font-bold">SEMESTER:</span> <span class="text-white font-bold">7th Sem (4th Year)</span></p>
+                        <p><span class="text-sand font-bold">BRANCH:</span> <span class="text-white font-bold">B.E. Civil Engineering</span></p>
+                    </div>
+                </div>
+
+                <!-- Biography & Academic Details -->
+                <div class="flex-grow">
+                    <span class="text-xs font-mono uppercase tracking-[0.22em] text-taupe block mb-1">Student Profile</span>
+                    <h1 class="font-display text-4xl sm:text-5xl uppercase font-bold tracking-tight text-charcoal mb-2">
+                        About me
+                    </h1>
+                    <p class="text-base sm:text-lg font-semibold text-charcoalSoft mb-6 pb-4 border-b border-stoneBorder">
+                        Akshat S Hiregoudar • KLE Technological University, Hubballi – 580031
+                    </p>
+
+                    <div class="space-y-4 text-sm sm:text-base text-charcoalSoft leading-relaxed">
+                        <p>
+                            I am <strong>Akshat Hiregoudar</strong>, a Seventh Semester (Fourth Year) student pursuing a Bachelor of Engineering in Civil Engineering at <strong>KLE Technological University, Hubballi – 580031</strong>.
+                        </p>
+                        <p>
+                            This portfolio serves as a structured record of my learnings, site observations, and practical experiences acquired during the <strong>Construction Site Management Practices Laboratory</strong>. It addresses core aspects of construction site administration, including site layout planning, material management, equipment utilization, labour coordination, occupational safety practices, and project scheduling.
+                        </p>
+                        <p>
+                            Through this laboratory coursework, I developed a comprehensive understanding of field-level construction execution and coordination. Furthermore, it enhanced my engineering problem-solving skills, teamwork, and awareness of quality assurance, safety management, time control, and optimal resource allocation in construction projects.
+                        </p>
+                    </div>
+
+                    <div class="mt-8 pt-6 border-t border-stoneBorder flex flex-wrap gap-3">
+                        <button onclick="switchPage('portfolio')" class="bg-charcoal text-stoneBg hover:bg-charcoalSoft transition px-6 py-3 rounded-lg text-xs font-semibold uppercase tracking-widest">
+                            ← Back to Engineering Portfolio
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal text-stoneBg border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-8 py-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-sand">
+            <div>
+                <p class="font-display text-lg uppercase text-white tracking-wide">Akshat S Hiregoudar • 01FE23BCV042</p>
+                <p>Construction Site Management Practices Laboratory • KLE Technological University, Hubballi</p>
+            </div>
+            <p class="font-mono">© 2026 Civil Engineering Portfolio</p>
+        </div>
+    </footer>
+
+    <!-- Fullscreen Image Lightbox Modal -->
+    <div id="image-modal" onclick="closeModal()" class="hidden fixed inset-0 z-50 bg-black/90 backdrop-blur-sm flex items-center justify-center p-4">
+        <div onclick="event.stopPropagation()" class="relative max-w-4xl w-full bg-charcoal rounded-xl overflow-hidden border border-white/20 shadow-2xl">
+            <div class="flex items-center justify-between px-4 py-3 border-b border-white/15 text-xs text-stoneBg">
+                <span id="modal-caption" class="font-mono uppercase tracking-wider">Meeting Evidence</span>
+                <button onclick="closeModal()" class="px-2.5 py-1 rounded bg-white/10 hover:bg-white/20 text-white">Close ✕</button>
+            </div>
+            <img id="modal-img" src="" alt="Enlarged Evidence" class="w-full max-h-[80vh] object-contain bg-black">
+        </div>
+    </div>
+
+    <script>
+        /* =========================================================================
+           IMAGE ASSETS CONFIGURATION (Local File Paths — No Base64)
+           Place your .jpeg files in the same folder as index.html to load locally;
+           clean engineering fallbacks load automatically in sandboxed previews.
+           ========================================================================= */
+        const IMAGE_ASSETS = {
+            aboutProfile: "bio phote.jpeg",
+            ps1_mom1: "",
+            ps1_mom2: "",
+            ps2_mom3: "",
+            ps2_mom4: "",
+            ps3_mom1: "",
+            ps3_mom2: "",
+            ps4_mom1: "",
+            ps5_mom1: "",
+            ps5_mom2: "",
+            ps6_mom1: "",
+            ps6_mom2: ""
+        };
+
+        // Complete structured repository of Problem Statements 1–6
+        const portfolioData = [
+            {
+                id: 1,
+                code: "PS — 01",
+                shortTitle: "Statutory Paperwork & Site Layout",
+                title: "Statutory Paperwork, RERA Compliance & Master Site Layout",
+                theme: "Theme: To complete all paperwork related to local governing body and RERA and develop a detailed site layout to attain an efficient circulation of labor housing, material storage and civil site office and determine the total duration of the project.",
+                status: "Completed Record",
+                scale: "8 Acres • 7 Blocks • 3 Basements",
+                heroImg: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1000&q=80",
+                metrics: [
+                    { label: "Total Concrete", value: "12,000 m³" },
+                    { label: "Built-up Footprint", value: "1,18,000 sq.ft" },
+                    { label: "Site Area", value: "8 Acres (2 Gates)" }
+                ],
+                questionHTML: `
+                    <p>Your company has just won a contract for the construction of a shopping mall comprising <strong>7 blocks</strong> with interconnected pathways and <strong>3 stories of underground parking</strong> on an <strong>8-acre land</strong> (preliminary concrete estimate: <strong>12,000 m³</strong>; mobilization amount received in 1 week).</p>
+                    <div class="overflow-x-auto my-3">
+                        <table class="w-full text-xs border border-stoneBorder rounded-lg overflow-hidden">
+                            <thead class="bg-charcoal text-stoneBg uppercase tracking-wider">
+                                <tr>
+                                    <th class="px-3 py-2 text-left">Block No.</th>
+                                    <th class="px-3 py-2 text-right">Block 1</th>
+                                    <th class="px-3 py-2 text-right">Block 2</th>
+                                    <th class="px-3 py-2 text-right">Block 3</th>
+                                    <th class="px-3 py-2 text-right">Block 4</th>
+                                    <th class="px-3 py-2 text-right">Block 5</th>
+                                    <th class="px-3 py-2 text-right">Block 6</th>
+                                    <th class="px-3 py-2 text-right">Block 7</th>
+                                    <th class="px-3 py-2 text-right font-bold">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bg-stoneCard/50 divide-x divide-stoneBorder font-mono">
+                                <tr>
+                                    <td class="px-3 py-2 font-sans font-semibold">Area (sq.ft)</td>
+                                    <td class="px-3 py-2 text-right">16,000</td>
+                                    <td class="px-3 py-2 text-right">18,000</td>
+                                    <td class="px-3 py-2 text-right">16,000</td>
+                                    <td class="px-3 py-2 text-right">16,000</td>
+                                    <td class="px-3 py-2 text-right">14,000</td>
+                                    <td class="px-3 py-2 text-right">18,000</td>
+                                    <td class="px-3 py-2 text-right">20,000</td>
+                                    <td class="px-3 py-2 text-right font-bold">1,18,000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <ul class="list-disc pl-5 space-y-1.5 text-xs sm:text-sm">
+                        <li>Conduct a detailed study of all paperwork required by the local governing body and RERA; coordinate with Architect, Structural, and MEP Engineers.</li>
+                        <li>Provide labour housing compliant with Government of India statutory thresholds (BOCW / OSH Code) when site headcount crosses statutory limits.</li>
+                        <li>Evaluate setting up an on-site concrete batching plant vs. external RMC for 12,000 m³ concrete, raw material vendors, location, and conveying systems.</li>
+                        <li>Allocate dedicated yards for carpenters &amp; fabricators, electrical &amp; water supply for site &amp; camp, Civil &amp; Sales offices, Material Testing Lab &amp; Store, 2 gates, and total project duration.</li>
+                    </ul>
+                `,
+                meetings: [
+                    {
+                        number: "Minutes of Meeting 01",
+                        assetKey: "ps1_mom1",
+                        image: "Minutes of meeting 1.jpeg",
+                        tempImage: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80",
+                        dateTime: "Thursday, 20/08/2026 • 12:08 PM GMT+05:30",
+                        venue: "Outdoor Academic Courtyard, KLE Technological University, Kusugal Road, Hubballi (Lat 15.368533, Long 75.123347)",
+                        points: [
+                            "Reviewed the 8-acre AutoCAD site boundary, 7 commercial blocks (1,18,000 sq.ft total footprint), and 3-level basement excavation zone.",
+                            "Compiled checklist of mandatory pre-construction legal documents: Absolute Sale Deed, Khata Certificate & Transfer, Encumbrance Certificate (Form-16), Land-Use Conversion, Sanctioned Building Plan, Fire Safety NOC Demand Note, Commencement Certificate, and Karnataka RERA Registration.",
+                            "Evaluated concrete demand (12,000 m³) and confirmed feasibility of installing a dedicated on-site batching plant with boom placer/pump conveying lines."
+                        ]
+                    },
+                    {
+                        number: "Minutes of Meeting 02",
+                        assetKey: "ps1_mom2",
+                        image: "Minutes of meeting 2 .jpeg",
+                        tempImage: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=900&q=80",
+                        dateTime: "Thursday, 20/08/2026 • 12:15 PM GMT+05:30",
+                        venue: "Outdoor Academic Courtyard, KLE Technological University, Hubballi (Lat 15.368535, Long 75.123346)",
+                        points: [
+                            "Finalized zoning for Gate 1 (Ingress) and Gate 2 (Egress) to establish collision-free one-way heavy vehicle circulation around the 7 blocks.",
+                            "Positioned the Main Store, QC Material Testing Lab, Carpenter Yard, and Reinforcement Fabrication Yard outside the basement dig limits.",
+                            "Defined statutory labour welfare facilities (creche, sanitation, potable water, first-aid, electrical load) and calculated overall project schedule duration."
+                        ]
+                    }
+                ],
+                solutionsHTML: `
+                    <!-- Visual Flowchart & Site Zoning Diagram -->
+                    <div class="bg-white/85 border border-stoneBorder rounded-xl p-5 sm:p-7 shadow-sm">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                            <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-charcoal">A. Statutory Approval & Pre-Construction Paperwork Workflow</h3>
+                            <span class="text-[11px] font-mono bg-stoneCard px-2.5 py-0.5 rounded border border-stoneBorder">BBMP / Local Authority & K-RERA</span>
+                        </div>
+
+                        <!-- SVG Workflow Diagram -->
+                        <div class="w-full overflow-x-auto pb-2 mb-6">
+                            <svg viewBox="0 0 920 175" class="w-full min-w-[680px] h-auto" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <marker id="arrow1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                        <path d="M 0 1 L 10 5 L 0 9 z" fill="#231F1D"/>
+                                    </marker>
+                                </defs>
+                                <!-- Step 1 -->
+                                <rect x="10" y="25" width="155" height="115" rx="10" fill="#231F1D"/>
+                                <text x="87" y="52" fill="#D8CFC2" font-size="10" font-family="monospace" text-anchor="middle">STAGE 01</text>
+                                <text x="87" y="72" fill="#FFFFFF" font-size="12" font-weight="bold" text-anchor="middle">Land Title & Khata</text>
+                                <text x="87" y="92" fill="#E5DFD5" font-size="10" text-anchor="middle">Absolute Sale Deed</text>
+                                <text x="87" y="107" fill="#E5DFD5" font-size="10" text-anchor="middle">RTC, Form-16 EC &</text>
+                                <text x="87" y="122" fill="#E5DFD5" font-size="10" text-anchor="middle">Khata Transfer</text>
+                                <line x1="165" y1="82" x2="195" y2="82" stroke="#231F1D" stroke-width="2" marker-end="url(#arrow1)"/>
+
+                                <!-- Step 2 -->
+                                <rect x="198" y="25" width="155" height="115" rx="10" fill="#EBE6DC" stroke="#231F1D" stroke-width="1.5"/>
+                                <text x="275" y="52" fill="#7A7267" font-size="10" font-family="monospace" text-anchor="middle">STAGE 02</text>
+                                <text x="275" y="72" fill="#231F1D" font-size="12" font-weight="bold" text-anchor="middle">Consultant Sign-off</text>
+                                <text x="275" y="92" fill="#3A3532" font-size="10" text-anchor="middle">Architect GFC Plans</text>
+                                <text x="275" y="107" fill="#3A3532" font-size="10" text-anchor="middle">Structural Stability &</text>
+                                <text x="275" y="122" fill="#3A3532" font-size="10" text-anchor="middle">MEP Services Design</text>
+                                <line x1="353" y1="82" x2="383" y2="82" stroke="#231F1D" stroke-width="2" marker-end="url(#arrow1)"/>
+
+                                <!-- Step 3 -->
+                                <rect x="386" y="25" width="155" height="115" rx="10" fill="#EBE6DC" stroke="#231F1D" stroke-width="1.5"/>
+                                <text x="463" y="52" fill="#7A7267" font-size="10" font-family="monospace" text-anchor="middle">STAGE 03</text>
+                                <text x="463" y="72" fill="#231F1D" font-size="12" font-weight="bold" text-anchor="middle">NOCs & Fire Safety</text>
+                                <text x="463" y="92" fill="#3A3532" font-size="10" text-anchor="middle">KSFES Fire NOC</text>
+                                <text x="463" y="107" fill="#3A3532" font-size="10" text-anchor="middle">Environmental / PCB,</text>
+                                <text x="463" y="122" fill="#3A3532" font-size="10" text-anchor="middle">BESCOM & Water NOC</text>
+                                <line x1="541" y1="82" x2="571" y2="82" stroke="#231F1D" stroke-width="2" marker-end="url(#arrow1)"/>
+
+                                <!-- Step 4 -->
+                                <rect x="574" y="25" width="155" height="115" rx="10" fill="#EBE6DC" stroke="#231F1D" stroke-width="1.5"/>
+                                <text x="651" y="52" fill="#7A7267" font-size="10" font-family="monospace" text-anchor="middle">STAGE 04</text>
+                                <text x="651" y="72" fill="#231F1D" font-size="12" font-weight="bold" text-anchor="middle">Plan Sanction & CC</text>
+                                <text x="651" y="92" fill="#3A3532" font-size="10" text-anchor="middle">2% Scrutiny Fee</text>
+                                <text x="651" y="107" fill="#3A3532" font-size="10" text-anchor="middle">Building License &</text>
+                                <text x="651" y="122" fill="#3A3532" font-size="10" text-anchor="middle">Commencement Cert.</text>
+                                <line x1="729" y1="82" x2="759" y2="82" stroke="#231F1D" stroke-width="2" marker-end="url(#arrow1)"/>
+
+                                <!-- Step 5 -->
+                                <rect x="762" y="25" width="148" height="115" rx="10" fill="#231F1D"/>
+                                <text x="836" y="52" fill="#D8CFC2" font-size="10" font-family="monospace" text-anchor="middle">STAGE 05</text>
+                                <text x="836" y="72" fill="#FFFFFF" font-size="12" font-weight="bold" text-anchor="middle">K-RERA Form-C</text>
+                                <text x="836" y="92" fill="#E5DFD5" font-size="10" text-anchor="middle">RERA Registration</text>
+                                <text x="836" y="107" fill="#E5DFD5" font-size="10" text-anchor="middle">Escrow 70% Account &</text>
+                                <text x="836" y="122" fill="#E5DFD5" font-size="10" text-anchor="middle">Sales Office Launch</text>
+                            </svg>
+                        </div>
+
+                        <!-- Detailed Documentation Breakdown -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-xs sm:text-sm">
+                            <div class="bg-stoneCard/50 border border-stoneBorder rounded-lg p-4">
+                                <h4 class="font-bold text-charcoal mb-1.5">1. Absolute Sale Deed & Title</h4>
+                                <p class="text-charcoalSoft text-xs leading-relaxed">Establishes legal ownership of the 8-acre parcel by identifying vendor, purchaser, schedule of property, and clear marketable title prior to applying for municipal building approvals.</p>
+                            </div>
+                            <div class="bg-stoneCard/50 border border-stoneBorder rounded-lg p-4">
+                                <h4 class="font-bold text-charcoal mb-1.5">2. Khata Certificate & Form-16 EC</h4>
+                                <p class="text-charcoalSoft text-xs leading-relaxed">Confirms property registration in municipal records (BBMP/Local Authority) for taxation and development, paired with Encumbrance Certificate (Form-16) verifying zero legal liabilities.</p>
+                            </div>
+                            <div class="bg-stoneCard/50 border border-stoneBorder rounded-lg p-4">
+                                <h4 class="font-bold text-charcoal mb-1.5">3. Sanctioned Building Plan</h4>
+                                <p class="text-charcoalSoft text-xs leading-relaxed">Competent authority approval stamping ground coverage, FAR, setbacks, 3-level basement parking, and block dimensions. Requires 2% license scrutiny fee, site inspection, and indemnity bond.</p>
+                            </div>
+                            <div class="bg-stoneCard/50 border border-stoneBorder rounded-lg p-4">
+                                <h4 class="font-bold text-charcoal mb-1.5">4. Fire Safety NOC (KSFES)</h4>
+                                <p class="text-charcoalSoft text-xs leading-relaxed">Mandatory Karnataka State Fire & Emergency Services Demand Note & NOC based on high-rise/commercial mall occupancy and built-up area to verify life-safety egress and fire-fighting systems.</p>
+                            </div>
+                            <div class="bg-stoneCard/50 border border-stoneBorder rounded-lg p-4">
+                                <h4 class="font-bold text-charcoal mb-1.5">5. Commencement Certificate (CC)</h4>
+                                <p class="text-charcoalSoft text-xs leading-relaxed">Official statutory permission issued after plinth/foundation line verification allowing physical excavation and structural construction to begin legally on site.</p>
+                            </div>
+                            <div class="bg-stoneCard/50 border border-stoneBorder rounded-lg p-4">
+                                <h4 class="font-bold text-charcoal mb-1.5">6. RERA Registration (Act, 2016)</h4>
+                                <p class="text-charcoalSoft text-xs leading-relaxed">Mandatory State RERA Form-C registration before commercial marketing/sales. Enforces transparency, quarterly progress disclosure, timeline accountability, and buyer protection.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Site Logistics, Batching Plant & Infrastructure Plan -->
+                    <div class="bg-white/85 border border-stoneBorder rounded-xl p-5 sm:p-7 shadow-sm">
+                        <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-charcoal mb-4">B. 8-Acre Site Logistics, Batching Plant Justification & Infrastructure</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 text-xs sm:text-sm">
+                            <div class="border border-stoneBorder rounded-lg p-4 bg-stoneBg/50">
+                                <span class="text-[10px] font-mono uppercase tracking-wider text-taupe">Concrete Production Decision</span>
+                                <h4 class="font-bold text-charcoal text-base mt-0.5 mb-2">On-Site Batching Plant (30–45 m³/hr) vs. External RMC</h4>
+                                <ul class="list-disc pl-4 space-y-1.5 text-charcoalSoft text-xs leading-relaxed">
+                                    <li><strong>Justification:</strong> With <strong>12,000 m³</strong> concrete required across 7 blocks and 3 basements, an on-site CP-30/CP-45 batching plant saves ₹450–₹650/m³ compared to commercial RMC, breaking even around 4,500–5,000 m³ while eliminating transit slump loss.</li>
+                                    <li><strong>Plant Location & Conveying:</strong> Positioned centrally along the main haulage corridor with aggregate bins (20mm, 10mm, M-sand) and dual cement silos; concrete conveyed via stationary concrete pumps, placer booms, and transit mixers.</li>
+                                    <li><strong>Raw Material Vendors:</strong> Direct rate contracts with local quarry crushers for coarse/fine aggregates and bulk OPC-53/PPC cement suppliers with dedicated testing at the adjacent QC lab.</li>
+                                </ul>
+                            </div>
+
+                            <div class="border border-stoneBorder rounded-lg p-4 bg-stoneBg/50">
+                                <span class="text-[10px] font-mono uppercase tracking-wider text-taupe">Site Zoning & Statutory Welfare</span>
+                                <h4 class="font-bold text-charcoal text-base mt-0.5 mb-2">Circulation, Yards, Offices & Labour Camp</h4>
+                                <ul class="list-disc pl-4 space-y-1.5 text-charcoalSoft text-xs leading-relaxed">
+                                    <li><strong>2-Gate One-Way Circulation:</strong> Gate 1 (Entry) near Main Store & QC Lab; Gate 2 (Exit) on the opposite frontage to eliminate reversing of heavy trailers.</li>
+                                    <li><strong>Dedicated Fabrication Yards:</strong> Separate Steel Bar Bending Yard (with rack storage & scrap bins) and Carpenter Shuttering Yard placed adjacent to tower crane/hoist radii.</li>
+                                    <li><strong>Offices & Lab:</strong> Sales Office placed near main public frontage with isolated visitor parking; Civil Engineering Site Office, Main Store, and Material Testing Lab located inside the operational perimeter.</li>
+                                    <li><strong>Labour Camp (BOCW / OSH Code):</strong> Segregated living quarters for skilled/unskilled workers outside hazard zones with potable RO water (135 LPCD), sanitation blocks (1:20 ratio), crèche facility (&gt;50 workers), first-aid clinic, and temporary 250 kVA DG/grid power supply.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                reflections: [
+                    "Gained practical understanding of comprehensive construction site planning, zoning, and logistics management across an 8-acre multi-block project.",
+                    "Learned the statutory hierarchy of RERA registration, Absolute Sale Deed verification, Khata transfer, Fire Safety NOC, and municipal building plan approvals.",
+                    "Understood the operational importance of separating heavy vehicle circulation, material storage yards, and labour housing to prevent bottlenecks.",
+                    "Learned how to evaluate on-site batching plant economics versus external RMC supply for high-volume (12,000 m³) structural concrete projects.",
+                    "Connected classroom estimation and scheduling theory with real-world site mobilization workflows and interdisciplinary team coordination."
+                ],
+                conclusions: [
+                    "Proper site layout planning and statutory documentation are non-negotiable prerequisites before commencing physical excavation.",
+                    "Completing municipal approvals, Fire NOC, and RERA registration early protects the project from legal stoppages and financial penalties.",
+                    "Setting up an on-site batching plant for 12,000 m³ concrete improves quality consistency, pour continuity, and overall cost efficiency.",
+                    "Segregated carpenter/fabricator yards, proximate QC testing labs, and code-compliant labour camps ensure safe, uninterrupted site productivity."
+                ]
+            },
+            {
+                id: 2,
+                code: "PS — 02",
+                shortTitle: "Smart-Track Material System",
+                title: "SMART-TRACK: Automated Construction Material Management System",
+                theme: "Theme: To develop a system for construction material procurement, QC, storage and accounts which can be sustainable with minimum supervision from the project manager.",
+                status: "Completed Record",
+                scale: "15-Day Setup • 6 Store Zones • ANPR + QR",
+                heroImg: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1000&q=80",
+                metrics: [
+                    { label: "Setup Window", value: "15 Days" },
+                    { label: "Controlled Zones", value: "6 Color Zones" },
+                    { label: "Gate Flow", value: "Gate 1 In / Gate 2 Out" }
+                ],
+                questionHTML: `
+                    <p>As Project Manager, you have hired a new Store Manager who lacks experience on large-scale projects. Execution starts in <strong>15 days</strong>. You must design a self-sustaining material procurement, QC, storage, and accounting system requiring minimum PM supervision:</p>
+                    <ul class="list-disc pl-5 space-y-1.5 text-xs sm:text-sm">
+                        <li>Prepare a structured store layout segregating <strong>consumables, non-consumables, equipment, and safety gear</strong>.</li>
+                        <li>Assign <strong>Gate 1 (Ingress)</strong> and <strong>Gate 2 (Departure)</strong> based on store proximity and one-way traffic flow.</li>
+                        <li>Record every vehicle registration number on entry and exit using security and automated technology (ANPR).</li>
+                        <li>Distribute three copies of the delivery invoice: <strong>Copy 1 (Security), Copy 2 (Store Manager), Copy 3 (Accounts)</strong>.</li>
+                        <li>Enforce joint Store + QA/QC inspection utilizing the adjacent Material Testing Lab; rejected materials must exit immediately with full documentation, while accepted materials move to designated storage slots.</li>
+                    </ul>
+                `,
+                meetings: [
+                    {
+                        number: "Minutes of Meeting 03",
+                        assetKey: "ps2_mom3",
+                        image: "Minutes of meeting 3.jpeg",
+                        tempImage: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=900&q=80",
+                        dateTime: "Monday, 23/11/2026 • 01:05 PM GMT+05:30",
+                        venue: "Civil Engineering Classroom, KLE Technological University, Vidya Nagar, Hubballi (Lat 15.368637°, Long 75.123848°)",
+                        points: [
+                            "Designed the SMART-TRACK architecture combining ANPR cameras at Gate 1 & Gate 2, QR-tagged delivery dockets, and color-coded store zoning (Zones A, B, C, D, Q, and R).",
+                            "Positioned the Main Store and QC Testing Lab in the space between Block 6 and Block 2 near Gate 1 to minimize sample transport time.",
+                            "Established the 3-way invoice distribution protocol (Security, Store Manager, Accounts) linked under a unique Delivery ID (e.g., DEL-0001)."
+                        ]
+                    },
+                    {
+                        number: "Minutes of Meeting 04",
+                        assetKey: "ps2_mom4",
+                        image: "Minutes of meeting 4.jpeg",
+                        tempImage: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80",
+                        dateTime: "Monday, 23/11/2026 • 01:25 PM GMT+05:30",
+                        venue: "Civil Engineering Classroom, KLE Technological University, Vidya Nagar, Hubballi",
+                        points: [
+                            "Mapped the QA/QC inspection decision tree (ACCEPT → Green Exit Pass, HOLD → Zone Q Quarantine, REJECT → Red Exit Pass / Zone R) to guarantee untested material never enters usable stock.",
+                            "Defined offline backup protocols for camera, internet, QR, and printer failures so gate operations never stall.",
+                            "Finalized the 15-day implementation schedule and 7 end-to-end stress-test scenarios prior to Day-15 readiness approval."
+                        ]
+                    }
+                ],
+                solutionsHTML: `
+                    <!-- End-to-End Material Delivery Workflow SVG -->
+                    <div class="bg-white/85 border border-stoneBorder rounded-xl p-5 sm:p-7 shadow-sm">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                            <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-charcoal">A. End-to-End Material Delivery & QC Decision Flowchart</h3>
+                            <span class="text-[11px] font-mono bg-stoneCard px-2.5 py-0.5 rounded border border-stoneBorder">SMART-TRACK WORKFLOW</span>
+                        </div>
+
+                        <div class="w-full overflow-x-auto pb-3 mb-6">
+                            <svg viewBox="0 0 980 280" class="w-full min-w-[740px] h-auto" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <marker id="arr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                        <path d="M 0 1 L 10 5 L 0 9 z" fill="#231F1D"/>
+                                    </marker>
+                                </defs>
+                                <!-- Top Linear Flow -->
+                                <rect x="10" y="20" width="135" height="75" rx="8" fill="#231F1D"/>
+                                <text x="77" y="46" fill="#D8CFC2" font-size="9" font-family="monospace" text-anchor="middle">1. GATE 1 INGRESS</text>
+                                <text x="77" y="64" fill="#FFFFFF" font-size="11" font-weight="bold" text-anchor="middle">ANPR + Invoice</text>
+                                <text x="77" y="80" fill="#E5DFD5" font-size="9" text-anchor="middle">3-Copy Split</text>
+                                <line x1="145" y1="57" x2="170" y2="57" stroke="#231F1D" stroke-width="2" marker-end="url(#arr2)"/>
+
+                                <rect x="173" y="20" width="135" height="75" rx="8" fill="#EBE6DC" stroke="#231F1D" stroke-width="1.5"/>
+                                <text x="240" y="46" fill="#7A7267" font-size="9" font-family="monospace" text-anchor="middle">2. REGISTRATION</text>
+                                <text x="240" y="64" fill="#231F1D" font-size="11" font-weight="bold" text-anchor="middle">DEL-0001 + QR</text>
+                                <text x="240" y="80" fill="#3A3532" font-size="9" text-anchor="middle">Docket QR Printed</text>
+                                <line x1="308" y1="57" x2="333" y2="57" stroke="#231F1D" stroke-width="2" marker-end="url(#arr2)"/>
+
+                                <rect x="336" y="20" width="135" height="75" rx="8" fill="#EBE6DC" stroke="#231F1D" stroke-width="1.5"/>
+                                <text x="403" y="46" fill="#7A7267" font-size="9" font-family="monospace" text-anchor="middle">3. QC HOLDING</text>
+                                <text x="403" y="64" fill="#231F1D" font-size="11" font-weight="bold" text-anchor="middle">Store + QA/QC</text>
+                                <text x="403" y="80" fill="#3A3532" font-size="9" text-anchor="middle">Adjacent Lab Check</text>
+                                <line x1="471" y1="57" x2="496" y2="57" stroke="#231F1D" stroke-width="2" marker-end="url(#arr2)"/>
+
+                                <rect x="499" y="20" width="145" height="75" rx="8" fill="#231F1D"/>
+                                <text x="571" y="46" fill="#D8CFC2" font-size="9" font-family="monospace" text-anchor="middle">4. QC DECISION</text>
+                                <text x="571" y="64" fill="#FFFFFF" font-size="11" font-weight="bold" text-anchor="middle">Inspect & Verify</text>
+                                <text x="571" y="80" fill="#E5DFD5" font-size="9" text-anchor="middle">Photos + Lab Report</text>
+
+                                <!-- Decision Branches -->
+                                <line x1="571" y1="95" x2="571" y2="125" stroke="#231F1D" stroke-width="2"/>
+                                <line x1="210" y1="125" x2="840" y2="125" stroke="#231F1D" stroke-width="2"/>
+
+                                <!-- Branch A: ACCEPT -->
+                                <line x1="210" y1="125" x2="210" y2="148" stroke="#166534" stroke-width="2" marker-end="url(#arr2)"/>
+                                <rect x="85" y="150" width="250" height="78" rx="8" fill="#DCFCE7" stroke="#166534" stroke-width="1.5"/>
+                                <text x="210" y="170" fill="#166534" font-size="11" font-weight="bold" text-anchor="middle">PATH C: ACCEPT (YES)</text>
+                                <text x="210" y="187" fill="#14532D" font-size="9.5" text-anchor="middle">Assign Rack (e.g. A-03) → Scan Location QR</text>
+                                <text x="210" y="202" fill="#14532D" font-size="9.5" text-anchor="middle">Update Inventory → Issue GREEN Exit Pass</text>
+                                <text x="210" y="217" fill="#14532D" font-size="9.5" text-anchor="middle">Accounts Invoice Matched for Payment</text>
+
+                                <!-- Branch B: HOLD -->
+                                <line x1="530" y1="125" x2="530" y2="148" stroke="#B45309" stroke-width="2" marker-end="url(#arr2)"/>
+                                <rect x="405" y="150" width="250" height="78" rx="8" fill="#FEF3C7" stroke="#B45309" stroke-width="1.5"/>
+                                <text x="530" y="170" fill="#B45309" font-size="11" font-weight="bold" text-anchor="middle">PATH B: HOLD (PENDING)</text>
+                                <text x="530" y="187" fill="#78350F" font-size="9.5" text-anchor="middle">Quarantine in Zone Q • Block Stock Issue</text>
+                                <text x="530" y="202" fill="#78350F" font-size="9.5" text-anchor="middle">Notify Engineer / Lab • Auto Reminders</text>
+                                <text x="530" y="217" fill="#78350F" font-size="9.5" text-anchor="middle">Status Locked Until Authorized Sign-off</text>
+
+                                <!-- Branch C: REJECT -->
+                                <line x1="840" y1="125" x2="840" y2="148" stroke="#991B1B" stroke-width="2" marker-end="url(#arr2)"/>
+                                <rect x="715" y="150" width="250" height="78" rx="8" fill="#FEE2E2" stroke="#991B1B" stroke-width="1.5"/>
+                                <text x="840" y="170" fill="#991B1B" font-size="11" font-weight="bold" text-anchor="middle">PATH A: REJECT (FAILED)</text>
+                                <text x="840" y="187" fill="#7F1D1D" font-size="9.5" text-anchor="middle">Rejection Report + Photo Evidence Logged</text>
+                                <text x="840" y="202" fill="#7F1D1D" font-size="9.5" text-anchor="middle">Immediate Return or Zone R • RED Exit Pass</text>
+                                <text x="840" y="217" fill="#7F1D1D" font-size="9.5" text-anchor="middle">Accounts Notified → Payment Blocked</text>
+
+                                <!-- Gate 2 Closure Bar -->
+                                <rect x="85" y="242" width="880" height="30" rx="6" fill="#231F1D"/>
+                                <text x="525" y="261" fill="#F4F1EA" font-size="10.5" font-family="monospace" text-anchor="middle">GATE 2 DEPARTURE: ANPR Exit Scan + Red/Green Exit Pass Verification + Delivery Visit Closed</text>
+                            </svg>
+                        </div>
+
+                        <!-- Six Controlled Store Zones Table -->
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-charcoal mb-2.5">B. Six Color-Coded Store Zones & Bin Coding Architecture (Between Block 6 & Block 2 near Gate 1)</h4>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-xs border border-stoneBorder rounded-lg overflow-hidden">
+                                <thead class="bg-charcoal text-stoneBg uppercase tracking-wider">
+                                    <tr>
+                                        <th class="px-3 py-2.5 text-left">Zone</th>
+                                        <th class="px-3 py-2.5 text-left">Color Code</th>
+                                        <th class="px-3 py-2.5 text-left">Category</th>
+                                        <th class="px-3 py-2.5 text-left">Stored Materials & Bin Coding Rule</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-stoneBorder bg-white">
+                                    <tr>
+                                        <td class="px-3 py-2 font-mono font-bold">Zone A</td>
+                                        <td class="px-3 py-2"><span class="inline-block w-3 h-3 rounded-full bg-blue-600 mr-1.5 align-middle"></span>Blue</td>
+                                        <td class="px-3 py-2 font-semibold">Consumables</td>
+                                        <td class="px-3 py-2">Cement bags (raised pallets), binding wire, nails, curing compounds, admixtures (Rack codes: A-01, A-02...)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-3 py-2 font-mono font-bold">Zone B</td>
+                                        <td class="px-3 py-2"><span class="inline-block w-3 h-3 rounded-full bg-yellow-400 mr-1.5 align-middle"></span>Yellow</td>
+                                        <td class="px-3 py-2 font-semibold">Non-Consumables</td>
+                                        <td class="px-3 py-2">Scaffolding pipes, cuplock standards, jacks, shuttering plates, reusable formwork (Bay codes: B-01, B-02...)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-3 py-2 font-mono font-bold">Zone C</td>
+                                        <td class="px-3 py-2"><span class="inline-block w-3 h-3 rounded-full bg-orange-500 mr-1.5 align-middle"></span>Orange</td>
+                                        <td class="px-3 py-2 font-semibold">Equipment & Tools</td>
+                                        <td class="px-3 py-2">Needle vibrators, bar bending/cutting machines, drills, breakers, surveying levels (Slot codes: C-01...)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-3 py-2 font-mono font-bold">Zone D</td>
+                                        <td class="px-3 py-2"><span class="inline-block w-3 h-3 rounded-full bg-emerald-600 mr-1.5 align-middle"></span>Green</td>
+                                        <td class="px-3 py-2 font-semibold">Safety Gear (PPE)</td>
+                                        <td class="px-3 py-2">Safety helmets, reflective vests, steel-toe boots, full-body harnesses, gloves, goggles (Bin codes: D-01...)</td>
+                                    </tr>
+                                    <tr class="bg-amber-50/70">
+                                        <td class="px-3 py-2 font-mono font-bold">Zone Q</td>
+                                        <td class="px-3 py-2"><span class="inline-block w-3 h-3 rounded-full bg-amber-600 mr-1.5 align-middle"></span>Quarantine</td>
+                                        <td class="px-3 py-2 font-semibold">HOLD / Pending QC</td>
+                                        <td class="px-3 py-2">Strictly isolated holding bay for materials awaiting 7/28-day lab test results or missing mill test certificates.</td>
+                                    </tr>
+                                    <tr class="bg-red-50/70">
+                                        <td class="px-3 py-2 font-mono font-bold">Zone R</td>
+                                        <td class="px-3 py-2"><span class="inline-block w-3 h-3 rounded-full bg-red-600 mr-1.5 align-middle"></span>Rejected Bay</td>
+                                        <td class="px-3 py-2 font-semibold">Rejected Materials</td>
+                                        <td class="px-3 py-2">Locked holding area for failed deliveries requiring unloading prior to mandatory supplier return via Red Exit Pass.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- 15-Day Implementation Roadmap & Backup Protocols -->
+                    <div class="bg-white/85 border border-stoneBorder rounded-xl p-5 sm:p-7 shadow-sm">
+                        <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-charcoal mb-4">C. 15-Day Implementation Roadmap, Backup SOPs & Stress Testing</h3>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-5 text-xs">
+                            <div class="p-3 rounded-lg bg-stoneCard/70 border border-stoneBorder">
+                                <span class="font-mono font-bold text-charcoal block">DAYS 1–2</span>
+                                <span class="text-charcoalSoft">Site inspection & requirement capture → <em>Site Assessment</em></span>
+                            </div>
+                            <div class="p-3 rounded-lg bg-stoneCard/70 border border-stoneBorder">
+                                <span class="font-mono font-bold text-charcoal block">DAYS 3–4</span>
+                                <span class="text-charcoalSoft">Store zoning & one-way road design → <em>Layout Drawing</em></span>
+                            </div>
+                            <div class="p-3 rounded-lg bg-stoneCard/70 border border-stoneBorder">
+                                <span class="font-mono font-bold text-charcoal block">DAYS 5–6</span>
+                                <span class="text-charcoalSoft">Material codes & QC parameters → <em>QC Checklist</em></span>
+                            </div>
+                            <div class="p-3 rounded-lg bg-stoneCard/70 border border-stoneBorder">
+                                <span class="font-mono font-bold text-charcoal block">DAYS 7–8</span>
+                                <span class="text-charcoalSoft">SOP drafting & RACI matrix → <em>Responsibility Chart</em></span>
+                            </div>
+                            <div class="p-3 rounded-lg bg-stoneCard/70 border border-stoneBorder">
+                                <span class="font-mono font-bold text-charcoal block">DAYS 9–10</span>
+                                <span class="text-charcoalSoft">QR database, OCR & alerts → <em>Digital Prototype</em></span>
+                            </div>
+                            <div class="p-3 rounded-lg bg-stoneCard/70 border border-stoneBorder">
+                                <span class="font-mono font-bold text-charcoal block">DAYS 11–12</span>
+                                <span class="text-charcoalSoft">Paint zones A–R & install ANPR → <em>Ready Store</em></span>
+                            </div>
+                            <div class="p-3 rounded-lg bg-stoneCard/70 border border-stoneBorder">
+                                <span class="font-mono font-bold text-charcoal block">DAYS 13–14</span>
+                                <span class="text-charcoalSoft">Run 7 failure simulations → <em>Test Corrections</em></span>
+                            </div>
+                            <div class="p-3 rounded-lg bg-charcoal text-stoneBg">
+                                <span class="font-mono font-bold text-white block">DAY 15</span>
+                                <span class="text-sand">Staff training & full mock delivery → <em>Readiness Gate</em></span>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                            <div class="p-4 rounded-lg border border-stoneBorder bg-stoneBg/50">
+                                <h4 class="font-bold text-charcoal mb-1.5">Fail-Safe Offline Backup Procedures</h4>
+                                <ul class="list-disc pl-4 space-y-1 text-charcoalSoft">
+                                    <li><strong>ANPR Camera Failure:</strong> Guard logs plate manually in gate register + captures timestamped tablet photo.</li>
+                                    <li><strong>Internet Outage:</strong> Use pre-numbered paper delivery dockets; sync records once connectivity resumes.</li>
+                                    <li><strong>QR / Printer Failure:</strong> Lookup via Delivery ID / Invoice No. and issue stamped manual Red/Green exit pass.</li>
+                                    <li><strong>Missing QC Evidence:</strong> System defaults strictly to <strong>Zone Q (HOLD)</strong>; inventory update blocked.</li>
+                                </ul>
+                            </div>
+                            <div class="p-4 rounded-lg border border-stoneBorder bg-stoneBg/50">
+                                <h4 class="font-bold text-charcoal mb-1.5">Pre-Launch 7-Case Stress Test Matrix</h4>
+                                <p class="text-charcoalSoft leading-relaxed">
+                                    Before Day 15 sign-off, the team tests: (1) Clean pass delivery, (2) Missing supplier invoice, (3) Quantity mismatch against PO, (4) Failed QC test rejection, (5) Pending lab cube/steel result, (6) ANPR/internet blackout, and (7) Mismatched exit pass at Gate 2.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                reflections: [
+                    "Gained practical understanding of how standard operating procedures (SOPs) empower a newly hired store manager to run complex site logistics without constant project manager intervention.",
+                    "Learned the critical role of physical quarantine zones (Zone Q and Zone R) paired with digital QR locks so untested or rejected materials never reach active structural pours.",
+                    "Understood how three-way invoice matching across Security, Store, and Accounts eliminates duplicate billing and unauthorized vendor payments.",
+                    "Appreciated the necessity of designing offline fallback protocols for ANPR cameras, QR scanners, and network outages on active construction sites.",
+                    "Connected classroom quality assurance theory with real-world gate control, inventory audit trails, and exception-based project management."
+                ],
+                conclusions: [
+                    "The SMART-TRACK system integrates physical site zoning, ANPR gate tracking, QR-linked delivery IDs, and automated alerts into a self-sustaining workflow.",
+                    "Color-coded storage (Zones A–D) and isolated quarantine/rejection bays (Zones Q & R) prevent material mix-ups and quality compromises.",
+                    "Completing the 15-day setup and 7-scenario stress test ensures full operational readiness before the first construction vehicle arrives.",
+                    "By automating routine gate, store, and accounting checks, the Project Manager only intervenes on flagged exceptions."
+                ]
+            },
+            {
+                id: 3,
+                code: "PS — 03",
+                shortTitle: "Surveying & Benchmark Plan",
+                title: "Site Surveying Plan, Benchmark Network & Hybrid Survey Management",
+                theme: "Theme: To develop a surveying plan for a particular site and a system to manage in house engineers and outsourced work.",
+                status: "Completed Record",
+                scale: "34.8 ha • 6 BM Pillars • 14 TBMs",
+                heroImg: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=1000&q=80",
+                metrics: [
+                    { label: "Consultant Visit", value: "1 Visit (3 Days)" },
+                    { label: "Cost Saved", value: "₹68,000 (-46%)" },
+                    { label: "Ground Grid", value: "≈ 2,070 Points" }
+                ],
+                questionHTML: `
+                    <p>Project execution starts in <strong>5 days</strong> at the Hubballi site (7 blocks, 3 basement levels, ≈11 m dig depth). Surveying is outsourced to a Bengaluru-based Total Station consultant charging <strong>₹10,000 + travel and stay</strong> per visit.</p>
+                    <ul class="list-disc pl-5 space-y-1.5 text-xs sm:text-sm">
+                        <li>Mark permanent Benchmark (BM) locations and Reduced Levels (RLs) across the site layout to minimize consultant visits and mobilization expenses.</li>
+                        <li>Establish a clear operational management system dividing responsibilities between the outsourced consultant and in-house site engineers.</li>
+                        <li>Brainstorm and justify why the organization outsources primary surveying despite employing qualified in-house civil engineers.</li>
+                    </ul>
+                `,
+                meetings: [
+                    {
+                        number: "Minutes of Meeting 01 — Survey Bundling & Network Design",
+                        assetKey: "ps3_mom1",
+                        image: "ps3_mom1.jpeg",
+                        tempImage: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80",
+                        dateTime: "Scheduled Session • Hubballi Site Coordination",
+                        venue: "Civil Engineering Survey Lab, KLE Technological University, Hubballi",
+                        points: [
+                            "Consolidated all high-precision baseline tasks into a single 3-day Bengaluru consultant mobilization window, saving ₹68,000 (46% reduction vs. ad-hoc callouts).",
+                            "Positioned 6 permanent concrete BM pillars ≈26 m outside the +14 m dig limit and 4 corner pegs along the two shared boundaries (adjacent property & park).",
+                            "Designed a ≈2.3 km closed levelling loop (±9 mm tolerance) tied to an off-site reference, plus 14 working TBMs (2 per block) maintained by in-house engineers."
+                        ]
+                    },
+                    {
+                        number: "Minutes of Meeting 02 — Governance, Hold Points & Hybrid Model",
+                        assetKey: "ps3_mom2",
+                        image: "ps3_mom2.jpeg",
+                        tempImage: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=900&q=80",
+                        dateTime: "Scheduled Session • Hubballi Site Coordination",
+                        venue: "Civil Engineering Survey Lab, KLE Technological University, Hubballi",
+                        points: [
+                            "Prioritized Blocks 6 and 7 near Gate 1 boundary for immediate boundary verification and shoring design confirmation before excavation.",
+                            "Instituted a 5-pillar Survey Management System: Survey Control Register, Mandatory Excavation/Pour Hold Points, Two-Person Check Rule, Handover Acceptance Checklist, and Recall Triggers.",
+                            "Evaluated outsourcing rationale: contractual independence over ≈13 lakh m³ excavation billing, boundary liability protection, calibrated Total Station certification, and rapid multi-crew execution."
+                        ]
+                    }
+                ],
+                solutionsHTML: `
+                    <!-- Site Benchmark Network & 5-Day Timeline Diagram -->
+                    <div class="bg-white/85 border border-stoneBorder rounded-xl p-5 sm:p-7 shadow-sm">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                            <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-charcoal">A. Site Benchmark Control Network & 5-Day Mobilization Schedule</h3>
+                            <span class="text-[11px] font-mono bg-stoneCard px-2.5 py-0.5 rounded border border-stoneBorder">≈ 2.3 km Closed Loop (±9 mm)</span>
+                        </div>
+
+                        <!-- SVG Site Benchmark Schematic -->
+                        <div class="w-full overflow-x-auto pb-3 mb-6">
+                            <svg viewBox="0 0 920 265" class="w-full min-w-[700px] h-auto" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Outer Site Boundary -->
+                                <rect x="20" y="20" width="540" height="225" rx="8" fill="#F4F1EA" stroke="#231F1D" stroke-width="2.5"/>
+                                <text x="290" y="14" fill="#231F1D" font-size="10" font-family="monospace" text-anchor="middle">SHARED BOUNDARY WITH ADJACENT PROPERTY & PARK (Corner Pegs + Marks every ~150 m)</text>
+
+                                <!-- Assumed Dig Limit (+14m) -->
+                                <rect x="65" y="48" width="450" height="165" rx="6" fill="#EBE6DC" stroke="#7A7267" stroke-width="1.5" stroke-dasharray="6,4"/>
+                                <text x="290" y="63" fill="#7A7267" font-size="9.5" font-family="monospace" text-anchor="middle">ASSUMED BASEMENT DIG LIMIT (+14 m) — ≈11 m DEEP EXCAVATION</text>
+
+                                <!-- 7 Blocks Grid -->
+                                <rect x="90" y="75" width="75" height="45" rx="4" fill="#231F1D"/><text x="127" y="101" fill="#FFF" font-size="11" font-weight="bold" text-anchor="middle">B1 + 2 TBM</text>
+                                <rect x="180" y="75" width="75" height="45" rx="4" fill="#231F1D"/><text x="217" y="101" fill="#FFF" font-size="11" font-weight="bold" text-anchor="middle">B3 + 2 TBM</text>
+                                <rect x="270" y="75" width="75" height="45" rx="4" fill="#231F1D"/><text x="307" y="101" fill="#FFF" font-size="11" font-weight="bold" text-anchor="middle">B5 + 2 TBM</text>
+                                <rect x="360" y="75" width="75" height="45" rx="4" fill="#231F1D"/><text x="397" y="101" fill="#FFF" font-size="11" font-weight="bold" text-anchor="middle">B4 + 2 TBM</text>
+
+                                <rect x="120" y="142" width="85" height="48" rx="4" fill="#231F1D"/><text x="162" y="170" fill="#FFF" font-size="11" font-weight="bold" text-anchor="middle">B2 + 2 TBM</text>
+                                <rect x="235" y="142" width="95" height="48" rx="4" fill="#991B1B"/><text x="282" y="165" fill="#FFF" font-size="10.5" font-weight="bold" text-anchor="middle">B7 (Shoring)</text><text x="282" y="180" fill="#FEE2E2" font-size="9" text-anchor="middle">2 TBMs</text>
+                                <rect x="355" y="142" width="95" height="48" rx="4" fill="#991B1B"/><text x="402" y="165" fill="#FFF" font-size="10.5" font-weight="bold" text-anchor="middle">B6 (Shoring)</text><text x="402" y="180" fill="#FEE2E2" font-size="9" text-anchor="middle">2 TBMs</text>
+
+                                <!-- 6 Permanent BM Pillars outside dig limit (~26m from footprints) -->
+                                <circle cx="42" cy="50" r="8" fill="#166534"/><text x="42" y="37" fill="#166534" font-size="9" font-weight="bold" text-anchor="middle">BM-1</text>
+                                <circle cx="290" cy="34" r="8" fill="#166534"/><text x="290" y="29" fill="#166534" font-size="9" font-weight="bold" text-anchor="middle">BM-3</text>
+                                <circle cx="538" cy="50" r="8" fill="#166534"/><text x="538" y="37" fill="#166534" font-size="9" font-weight="bold" text-anchor="middle">BM-5</text>
+                                <circle cx="42" cy="215" r="8" fill="#166534"/><text x="42" y="233" fill="#166534" font-size="9" font-weight="bold" text-anchor="middle">BM-2</text>
+                                <circle cx="290" cy="228" r="8" fill="#166534"/><text x="290" y="241" fill="#166534" font-size="9" font-weight="bold" text-anchor="middle">BM-4</text>
+                                <circle cx="538" cy="215" r="8" fill="#166534"/><text x="538" y="233" fill="#166534" font-size="9" font-weight="bold" text-anchor="middle">BM-6</text>
+
+                                <!-- Right Side Legend & Economics Box -->
+                                <rect x="580" y="20" width="325" height="225" rx="10" fill="#231F1D"/>
+                                <text x="600" y="48" fill="#D8CFC2" font-size="10" font-family="monospace">7-POINT CONSULTANT VISIT SCOPE</text>
+                                <text x="600" y="70" fill="#FFFFFF" font-size="11">1. Closed traverse over 6 BMs + 4 corner pegs</text>
+                                <text x="600" y="90" fill="#FFFFFF" font-size="11">2. ≈2.3 km RL loop tied to off-site GTS BM</text>
+                                <text x="600" y="110" fill="#FFFFFF" font-size="11">3. Boundary pegs every ~150 m (B6/B7 first)</text>
+                                <text x="600" y="130" fill="#FFFFFF" font-size="11">4. ≈2,070 ground levels (10m/15m/25m grid)</text>
+                                <text x="600" y="150" fill="#FFFFFF" font-size="11">5. Site axes, block corners & offset pegs</text>
+                                <text x="600" y="170" fill="#FFFFFF" font-size="11">6. Adjacent property condition survey</text>
+                                <text x="600" y="190" fill="#FFFFFF" font-size="11">7. Signed BM Register, DWG & witnessed check</text>
+                                <rect x="600" y="204" width="285" height="28" rx="5" fill="#166534"/>
+                                <text x="742" y="222" fill="#FFFFFF" font-size="10.5" font-weight="bold" text-anchor="middle">SAVINGS: ₹68,000 (−46% vs Ad-Hoc Visits)</text>
+                            </svg>
+                        </div>
+
+                        <!-- 5-Day Pre-Execution Timeline Table -->
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-charcoal mb-2.5">B. Five-Day Pre-Execution & Consultant Mobilization Timeline</h4>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-xs border border-stoneBorder rounded-lg overflow-hidden">
+                                <thead class="bg-charcoal text-stoneBg uppercase tracking-wider">
+                                    <tr>
+                                        <th class="px-3 py-2 text-left">Timeline</th>
+                                        <th class="px-3 py-2 text-left">In-House Civil Team Action</th>
+                                        <th class="px-3 py-2 text-left">Bengaluru Consultant Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-stoneBorder bg-white">
+                                    <tr>
+                                        <td class="px-3 py-2 font-mono font-bold">Day 0 (Fri)</td>
+                                        <td class="px-3 py-2">Freeze 6 BM pillar locations, design datum & scope</td>
+                                        <td class="px-3 py-2">Confirm dates, calibration certificates & Total Station kit</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-3 py-2 font-mono font-bold">Day 1 (Sat)</td>
+                                        <td class="px-3 py-2">Cast 6 concrete BM pillars & 4 boundary corner pegs</td>
+                                        <td class="px-3 py-2">Standby</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-3 py-2 font-mono font-bold">Day 2 (Sun)</td>
+                                        <td class="px-3 py-2">Cure & barricade pillars; clear sightlines; auto-level test</td>
+                                        <td class="px-3 py-2">Mandatory Day-2 Readiness Call (prevents wasted trip)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-3 py-2 font-mono font-bold">Day 3 (Mon)</td>
+                                        <td class="px-3 py-2">Site walk-through & mark block excavation priority</td>
+                                        <td class="px-3 py-2">Travel from Bengaluru to Hubballi; arrive evening</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-3 py-2 font-mono font-bold">Day 4 (Tue)</td>
+                                        <td class="px-3 py-2">Assist rodmen & witness boundary/BM readings</td>
+                                        <td class="px-3 py-2">Closed traverse, ≈2.3 km RL loop, boundary pegs (B6/B7)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-3 py-2 font-mono font-bold">Day 5 (Wed)</td>
+                                        <td class="px-3 py-2">Mobilize excavation on first cleared block</td>
+                                        <td class="px-3 py-2">≈2,070 ground grid levels & primary block corner axes</td>
+                                    </tr>
+                                    <tr class="bg-stoneCard/50">
+                                        <td class="px-3 py-2 font-mono font-bold">Day 6 (Thu)</td>
+                                        <td class="px-3 py-2">Witness check, accept signed BM Register & DWG</td>
+                                        <td class="px-3 py-2">Complete remaining blocks, formal handover & depart</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Hybrid Management & Outsourcing Rationale -->
+                    <div class="bg-white/85 border border-stoneBorder rounded-xl p-5 sm:p-7 shadow-sm">
+                        <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-charcoal mb-4">C. Hybrid Survey Governance & Why Outsource Primary Surveying?</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 text-xs">
+                            <div class="p-4 rounded-lg border border-stoneBorder bg-stoneBg/50 space-y-2">
+                                <h4 class="font-bold text-charcoal text-sm">5-Rule Management System & Hybrid Split</h4>
+                                <p class="text-charcoalSoft"><strong>Consultant Owns:</strong> Primary control traverse, BM RLs & off-site tie, boundary verification, baseline OGLs (≈2,070 pts), and final completion as-built.</p>
+                                <p class="text-charcoalSoft"><strong>In-House Team Owns:</strong> 14 working TBMs (2/block), daily excavation/footing layout from axes, fortnightly & pre-pour loop checks (re-checking 3-day-old pillars on Day 11), and adjacent building settlement monitoring.</p>
+                                <ul class="list-disc pl-4 space-y-1 text-charcoalSoft pt-1">
+                                    <li><strong>Survey Control Register:</strong> Logs BM IDs, RLs, loop closures, setter & checker signatures.</li>
+                                    <li><strong>Hold Points & Two-Person Rule:</strong> Zero excavation or concrete pour without a signed layout sheet verified by a second engineer.</li>
+                                </ul>
+                            </div>
+                            <div class="p-4 rounded-lg border border-stoneBorder bg-stoneBg/50 space-y-2">
+                                <h4 class="font-bold text-charcoal text-sm">4 Engineering Reasons for Outsourcing Baseline Survey</h4>
+                                <ul class="list-disc pl-4 space-y-1.5 text-charcoalSoft">
+                                    <li><strong>Commercial Independence:</strong> ≈13 lakh m³ of earthwork billing rests on the baseline OGL (a 10 mm error equals ≈1,180 m³ in dispute). Third-party records settle client/subcontractor claims objectively.</li>
+                                    <li><strong>Boundary & Legal Liability:</strong> Two shared boundaries (neighbour + park) require licensed surveyor certification; setting-out errors remain the consultant's contractual liability to rectify.</li>
+                                    <li><strong>Speed & Traceable Calibration:</strong> A dedicated 3-person crew with calibrated 1-second Total Stations completes in 3 days what takes one site engineer over a week during peak mobilization.</li>
+                                    <li><strong>Optimal Hybrid Economics:</strong> Because 3 basement levels need daily instrument work for months, renting a Total Station for in-house routine transfers while outsourcing baseline/as-built visits yields the lowest total cost.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                reflections: [
+                    "Gained practical understanding of how pre-casting benchmarks and bundling baseline tasks into a single 3-day window slashes external consultant mobilization expenses by 46%.",
+                    "Learned the technical necessity of locating permanent BM pillars at least 26 m outside deep basement dig limits and tying them to an off-site reference.",
+                    "Understood why commercial independence on baseline ground levels (≈13 lakh m³ earthwork) and legal boundary liability justify hiring an external licensed survey team.",
+                    "Learned to structure a hybrid control model using Survey Control Registers, mandatory hold points, and two-person verification rules for in-house engineers.",
+                    "Connected classroom levelling and traverse adjustment concepts with real-world site risk mitigation and adjacent structure settlement monitoring."
+                ],
+                conclusions: [
+                    "A single bundled 3-day Bengaluru consultant visit (≈₹80,000 total including as-built) saves ₹68,000 while establishing a legally defensible site baseline.",
+                    "Six fenced concrete BM pillars, 4 boundary corner pegs, and 14 in-house working TBMs ensure uninterrupted vertical and horizontal control across all 7 blocks.",
+                    "Prioritizing Blocks 6 and 7 for boundary verification and shoring design prevents costly disputes along shared property lines.",
+                    "Hold points, fortnightly loop checks, and a signed Survey Control Register keep both outsourced and in-house engineers strictly accountable."
+                ]
+            },
+            {
+                id: 4,
+                code: "PS — 04",
+                shortTitle: "Steel & Formwork Optimization",
+                title: "Steel Reinforcement (BBS) & Formwork Wastage Reduction System",
+                theme: "Theme: To reduce wastage of steel and formwork through efficient management (Target: Steel 12% → 5%, Formwork 9% → 4%).",
+                status: "Completed Record",
+                scale: "30-Day Excavation Window • 10+ Reuse Cycles",
+                heroImg: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=80",
+                metrics: [
+                    { label: "Steel Wastage", value: "12% → 5%" },
+                    { label: "Plywood Wastage", value: "9% → 4%" },
+                    { label: "Formwork Reuse", value: "Min. 10 Cycles" }
+                ],
+                questionHTML: `
+                    <p>Historical company data shows average steel wastage at <strong>12%</strong> and plywood formwork wastage at <strong>9%</strong>. Excavation is in progress for the next <strong>30 days</strong>. Use this window to establish a complete material control system covering:</p>
+                    <ul class="list-disc pl-5 space-y-1.5 text-xs sm:text-sm">
+                        <li>Accurate Bar Bending Schedule (BBS) calculation, block-wise steel ordering, yard storage &amp; controlled issuing to fabricators, and weekly reconciliation to cut steel wastage from <strong>12% down to 5%</strong>.</li>
+                        <li>Grouping columns, footings, and beams by standardized sizes and enforcing cutting plans, release-agent care, and de-shuttering SOPs to reuse formwork sets for a <strong>minimum of 10 times</strong> (cutting plywood wastage from <strong>9% down to 4%</strong>).</li>
+                    </ul>
+                `,
+                meetings: [
+                    {
+                        number: "Minutes of Meeting 01 — BBS Calculations & Steel Reconciliation",
+                        assetKey: "ps4_mom1",
+                        image: "ps4_mom1.jpeg",
+                        tempImage: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80",
+                        dateTime: "Scheduled Session • 30-Day Excavation Pre-Planning",
+                        venue: "Civil Engineering Department, KLE Technological University, Hubballi",
+                        points: [
+                            "Quantified steel savings using D²/162 unit weights across Column C1 (24.29 kg), Column C2 (29.63 kg), Footing F1/F2 (27.46 kg), and Footing F3/F4 (38.51 kg): cutting wastage from 12% to 5% saves 70 kg per 1,000 kg theoretical steel.",
+                            "Established block-wise steel ordering (deducting available stock before PO release), diameter-wise raised timber storage, and requisition-slip issuing with mandatory off-cut recovery.",
+                            "Formulated weekly steel reconciliation tracking Opening Stock + Receipts − Closing Stock against theoretical BBS tonnage."
+                        ]
+                    },
+                    {
+                        number: "Minutes of Meeting 02 — Formwork Standardization & 30-Day Rollout",
+                        assetKey: "ps4_mom2",
+                        image: "ps4_mom2.jpeg",
+                        tempImage: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=900&q=80",
+                        dateTime: "Scheduled Session • Shuttering Optimization & Monitoring",
+                        venue: "Civil Engineering Department, KLE Technological University, Hubballi",
+                        points: [
+                            "Grouped structural elements into standardized shuttering modules: Column Group A (9\"×15\" for C1/C3), Column Group B (9\"×18\" for C2/C4), Footing Group 1 (5'×6' for F1/F2), and Footing Group 2 (6'×7' for F3/F4).",
+                            "Designed the 10-cycle plywood reuse protocol (₹15,000/set → ₹1,500/use vs. ₹1,50,000 for 10 new sets, saving ₹1,35,000 per formwork set).",
+                            "Mapped the 30-day implementation schedule, staff RACI responsibilities, and 8 daily/weekly monitoring registers."
+                        ]
+                    }
+                ],
+                solutionsHTML: `
+                    <!-- Part 1: Engineering Calculations (From Calculation Sheet) -->
+                    <div class="bg-white/85 border border-stoneBorder rounded-xl p-5 sm:p-7 shadow-sm space-y-6">
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-charcoal">A. Steel BBS, Concrete & Formwork Reuse Calculations</h3>
+                            <span class="text-[11px] font-mono bg-stoneCard px-2.5 py-0.5 rounded border border-stoneBorder">W = D² / 162 kg/m</span>
+                        </div>
+
+                        <!-- Wastage & Unit Weight Summary Cards -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+                            <div class="p-4 rounded-lg border border-stoneBorder bg-stoneBg/60">
+                                <span class="text-[10px] font-mono uppercase tracking-wider text-taupe">1. Steel Wastage Reduction</span>
+                                <h4 class="font-bold text-charcoal text-sm mt-0.5 mb-2">12% → 5% (Saves 70 kg / Tonne)</h4>
+                                <ul class="space-y-1 text-charcoalSoft font-mono">
+                                    <li>Theoretical Qty = 1,000 kg</li>
+                                    <li>Existing (12%) = 1,000 + 120 = 1,120 kg</li>
+                                    <li>Target (5%) = 1,000 + 50 = 1,050 kg</li>
+                                    <li class="text-emerald-800 font-bold pt-1">Net Saving = 70 kg per 1,000 kg</li>
+                                </ul>
+                            </div>
+
+                            <div class="p-4 rounded-lg border border-stoneBorder bg-stoneBg/60">
+                                <span class="text-[10px] font-mono uppercase tracking-wider text-taupe">2. Unit Weight Reference (D²/162)</span>
+                                <h4 class="font-bold text-charcoal text-sm mt-0.5 mb-2">Standard Rebar Sectional Weights</h4>
+                                <div class="grid grid-cols-2 gap-1 font-mono text-charcoalSoft">
+                                    <span>• 8 mm dia:</span><span class="text-right font-bold">0.395 kg/m</span>
+                                    <span>• 10 mm dia:</span><span class="text-right font-bold">0.617 kg/m</span>
+                                    <span>• 12 mm dia:</span><span class="text-right font-bold">0.889 kg/m</span>
+                                    <span>• 16 mm dia:</span><span class="text-right font-bold">1.580 kg/m</span>
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-lg border border-stoneBorder bg-stoneBg/60">
+                                <span class="text-[10px] font-mono uppercase tracking-wider text-taupe">6 & 7. Plywood & Reuse Economics</span>
+                                <h4 class="font-bold text-charcoal text-sm mt-0.5 mb-2">9% → 4% & 10-Cycle Savings</h4>
+                                <ul class="space-y-1 text-charcoalSoft font-mono">
+                                    <li>100 sheets: 109 → 104 (Saves 5)</li>
+                                    <li>Set Cost: ₹15,000 ÷ 10 = ₹1,500/use</li>
+                                    <li>New each use: 10 × ₹15k = ₹1,50,000</li>
+                                    <li class="text-emerald-800 font-bold pt-1">Saving = ₹1,35,000 / set</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Worked Structural Member Examples Table -->
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-xs border border-stoneBorder rounded-lg overflow-hidden">
+                                <thead class="bg-charcoal text-stoneBg uppercase tracking-wider">
+                                    <tr>
+                                        <th class="px-3 py-2 text-left">Member / Element</th>
+                                        <th class="px-3 py-2 text-left">Dimensions & Reinforcement / Concrete Details</th>
+                                        <th class="px-3 py-2 text-left">Calculation Breakdown</th>
+                                        <th class="px-3 py-2 text-right">Net Quantity</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-stoneBorder bg-white font-mono">
+                                    <tr>
+                                        <td class="px-3 py-2 font-sans font-bold">Column C1 (H = 3.0 m)</td>
+                                        <td class="px-3 py-2 font-sans">9"×15" • 4 bars 16mm + 2 bars 12mm (excl. rings/laps)</td>
+                                        <td class="px-3 py-2">(4×3×1.58) + (2×3×0.889) = 18.96 + 5.334</td>
+                                        <td class="px-3 py-2 text-right font-bold">24.29 kg</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-3 py-2 font-sans font-bold">Column C2 (H = 3.0 m)</td>
+                                        <td class="px-3 py-2 font-sans">9"×18" • 4 bars 16mm + 4 bars 12mm (excl. rings/laps)</td>
+                                        <td class="px-3 py-2">(4×3×1.58) + (4×3×0.889) = 18.96 + 10.668</td>
+                                        <td class="px-3 py-2 text-right font-bold">29.63 kg</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-3 py-2 font-sans font-bold">Footing F1 & F2 Jaali</td>
+                                        <td class="px-3 py-2 font-sans">4'9"×5'9" (4.75'×5.75') • 10mm @ 5" c/c both ways</td>
+                                        <td class="px-3 py-2">N1=13, N2=15 → L=146 ft = 44.50 m × 0.617</td>
+                                        <td class="px-3 py-2 text-right font-bold">27.46 kg</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-3 py-2 font-sans font-bold">Footing F3 & F4 Jaali</td>
+                                        <td class="px-3 py-2 font-sans">5'9"×6'9" (5.75'×6.75') • 10mm @ 5" c/c both ways</td>
+                                        <td class="px-3 py-2">N1=15, N2=18 → L=204.75 ft = 62.41 m × 0.617</td>
+                                        <td class="px-3 py-2 text-right font-bold">38.51 kg</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-3 py-2 font-sans font-bold">Footing Concrete (Step 1)</td>
+                                        <td class="px-3 py-2 font-sans">F1/F2: 5'×6'×1'6" (45 CFT) | F3/F4: 6'×7'×1'9" (73.5 CFT)</td>
+                                        <td class="px-3 py-2">45×0.0283168 = 1.274 m³ | 73.5×0.0283168 = 2.081 m³</td>
+                                        <td class="px-3 py-2 text-right font-bold">1.274 / 2.081 m³</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-3 py-2 font-sans font-bold">PCC Bed Concrete (1:4:8)</td>
+                                        <td class="px-3 py-2 font-sans">6" thick (0.5 ft) • F1/F2: 5.5'×6.5' | F3/F4: 6.5'×7.5'</td>
+                                        <td class="px-3 py-2">F1/F2 = 17.875 CFT | F3/F4 = 24.375 CFT</td>
+                                        <td class="px-3 py-2 text-right font-bold">17.88 / 24.38 CFT</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Part 2: Steel & Formwork Management System -->
+                    <div class="bg-white/85 border border-stoneBorder rounded-xl p-5 sm:p-7 shadow-sm space-y-5">
+                        <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-charcoal">B. Steel Procurement, Yard Control, Reconciliation & Formwork Grouping</h3>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                            <div class="p-4 rounded-lg border border-stoneBorder bg-stoneBg/50 space-y-2">
+                                <h4 class="font-bold text-charcoal text-sm">Steel Ordering, Yard Issuing & Weekly Reconciliation</h4>
+                                <ul class="list-disc pl-4 space-y-1 text-charcoalSoft leading-relaxed">
+                                    <li><strong>Block-Wise Ordering:</strong> Prepare BBS per block for 8, 10, 12, and 16 mm bars separately; deduct existing yard stock; order block-by-block (max 5% wastage buffer) instead of dumping entire project tonnage upfront.</li>
+                                    <li><strong>Storage & Requisition Issuing:</strong> Stack diameter-wise above ground on timber sleepers covered from rain. Fabricator submits requisition slip → Site Engineer verifies against BBS → Storekeeper issues exact bars & collects reusable off-cuts.</li>
+                                    <li><strong>Reconciliation Formula:</strong> <code class="bg-stoneCard px-1.5 py-0.5 rounded">Consumption = Opening Stock + Receipts − Closing Stock</code>; <code class="bg-stoneCard px-1.5 py-0.5 rounded">Wastage % = [(Actual − Theoretical) / Theoretical] × 100</code>. Audited weekly.</li>
+                                </ul>
+                            </div>
+
+                            <div class="p-4 rounded-lg border border-stoneBorder bg-stoneBg/50 space-y-2">
+                                <h4 class="font-bold text-charcoal text-sm">Standardized Formwork Grouping & 10-Cycle Protocol</h4>
+                                <ul class="list-disc pl-4 space-y-1 text-charcoalSoft leading-relaxed">
+                                    <li><strong>Column & Footing Standardization:</strong> Group A (9"×15" for C1 & C3) and Group B (9"×18" for C2 & C4) share identical shuttering boxes; Footing Group 1 (5'×6') and Group 2 (6'×7') standardize side panels; Beams grouped by identical width, depth & soffit spans.</li>
+                                    <li><strong>10-Cycle Reuse Routine:</strong> Cycle 1 (Inspect & install) → Cycles 2–3 (Clean & apply shuttering oil) → Cycles 4–6 (Check joints & repair edges) → Cycles 7–8 (Patch surface damages) → Cycle 9 (Alignment check) → Cycle 10 (Final structural soundness check).</li>
+                                    <li><strong>Precautions:</strong> Never hammer directly on plywood edges, store flat horizontally, strip only after engineer approval, and log panel IDs in a Formwork Reuse Register.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- 30-Day Implementation Plan & Monitoring Registers -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs pt-1">
+                            <div class="p-4 rounded-lg border border-stoneBorder bg-stoneCard/40">
+                                <h4 class="font-bold text-charcoal mb-2">30-Day Excavation Window Implementation Plan</h4>
+                                <ul class="space-y-1 text-charcoalSoft font-mono">
+                                    <li><strong>Days 1–5:</strong> Collect drawings, prepare BBS formats & group columns/beams.</li>
+                                    <li><strong>Days 6–10:</strong> Calculate steel quantities & issue block-wise PO schedules.</li>
+                                    <li><strong>Days 11–15:</strong> Set up diameter-wise steel racks & stock registers.</li>
+                                    <li><strong>Days 16–20:</strong> Fabricate standard formwork boxes & plywood cutting plans.</li>
+                                    <li><strong>Days 21–25:</strong> Train bar benders, carpenters & storekeepers on SOPs.</li>
+                                    <li><strong>Days 26–30:</strong> Trial reconciliation, audit registers & finalize system.</li>
+                                </ul>
+                            </div>
+                            <div class="p-4 rounded-lg border border-stoneBorder bg-stoneCard/40">
+                                <h4 class="font-bold text-charcoal mb-2">8 Site Control Registers & Staff Accountability</h4>
+                                <p class="text-charcoalSoft leading-relaxed mb-2">
+                                    Maintain: (1) Steel Stock Register, (2) Steel Purchase Register, (3) Steel Issue Register, (4) BBS & Cutting Register, (5) Steel Wastage Register, (6) Plywood Stock Register, (7) Formwork Reuse Register, and (8) Daily Material Consumption Report.
+                                </p>
+                                <p class="text-charcoalSoft"><strong>RACI Ownership:</strong> PM (Approval), Site Engineer (BBS & QC), Storekeeper (Issuing), Steel Fabricator (BBS Cutting), Formwork Supervisor (10x Reuse), Quantity Surveyor (Weekly Reconciliation).</p>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                reflections: [
+                    "Through this project, I learned the importance of proper material management in construction, understanding how steel wastage can be reduced by preparing an accurate Bar Bending Schedule (BBS), ordering steel block-wise, maintaining proper storage, and controlling material issue to fabricators.",
+                    "I also learned how grouping columns and beams based on their sizes helps in standardizing formwork, and how proper cutting, handling, maintenance, and reuse of plywood can reduce wastage and save significant construction costs.",
+                    "The 30-day implementation plan helped me understand how to organize site activities during the excavation window, assign clear staff responsibilities, and monitor material consumption through daily and weekly registers.",
+                    "Overall, this problem improved my knowledge of construction planning, cost control, and site supervision, demonstrating that disciplined tracking reduces steel wastage from 12% to 5% and plywood wastage from 9% to 4%."
+                ],
+                conclusions: [
+                    "By implementing proper BBS preparation, block-wise steel ordering, systematic storage, controlled material issuing, and regular weekly reconciliation, steel wastage can be reduced from 12% to 5%.",
+                    "Similarly, standardizing column and beam formwork, preparing cutting plans, careful handling, and reusing plywood at least 10 times can reduce plywood wastage from 9% to 4%.",
+                    "The proposed 30-day system helps the company save material costs (including ₹1,35,000 per formwork set over 10 cycles and 70 kg steel per tonne), eliminate unnecessary purchases, and achieve superior site productivity."
+                ]
+            },
+            {
+                id: 5,
+                code: "PS — 05",
+                shortTitle: "Optimum Labour Force Planning",
+                title: "Stage-Wise Optimum Labour Force Planning & Statutory Contract Control",
+                theme: "Theme: To determine optimum labor force through the various stages of construction (Peak vs. Slack deployment, prevailing wages & labour contract).",
+                status: "Completed Record",
+                scale: "6-Block Model • 300 m³ Concrete • Peak 32 Crew",
+                heroImg: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=1000&q=80",
+                metrics: [
+                    { label: "Peak Headcount", value: "32 Workers" },
+                    { label: "Slack Headcount", value: "3 Workers" },
+                    { label: "6-Block Labour Cost", value: "₹7.22 Lakh" }
+                ],
+                questionHTML: `
+                    <p>Based on block-wise concrete quantity take-off (illustrated via a 6-block × 50 m³ = <strong>300 m³</strong> transparent model), determine:</p>
+                    <ul class="list-disc pl-5 space-y-1.5 text-xs sm:text-sm">
+                        <li>Optimum number of <strong>skilled workers</strong> (fabricators/bar benders, shuttering carpenters, masons) and <strong>unskilled concrete gang helpers</strong> across construction stages.</li>
+                        <li>Balance <strong>peak concurrent deployment</strong> against <strong>slack curing periods</strong> so productivity does not drop from under-staffing nor idle wages accumulate from over-hiring.</li>
+                        <li>Benchmark wages against <strong>Bengaluru / Karnataka Zone 1</strong> market rates and statutory minimum wage notifications, and specify legal/technical clauses for a formal <strong>Labour Supply Contract</strong>.</li>
+                    </ul>
+                `,
+                meetings: [
+                    {
+                        number: "Minutes of Meeting 01 — Productivity Norms & Peak/Slack Modelling",
+                        assetKey: "ps5_mom1",
+                        image: "ps5_mom1.jpeg",
+                        tempImage: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&w=900&q=80",
+                        dateTime: "Scheduled Session • Laboratory Report Compilation",
+                        venue: "Civil Engineering Department, KLE Technological University, Hubballi",
+                        points: [
+                            "Established quantitative trade norms: Fabricators at 100 kg/worker-day (80 kg/m³ ratio → 4,000 kg/block), Carpenters at 6 m²/worker-day (4.5 m²/m³ ratio → 225 m²/block), Masons at 2/pour, and Unskilled Concrete Gang at 10 helpers per 25 m³ pour day.",
+                            "Calculated per-block demand: 18 workers during 5-day parallel rebar/formwork prep, 14 workers on Day-6 concrete pour, and 3 workers during Days 7–9 curing/inspection.",
+                            "Identified peak site headcount of 32 concurrent workers when Block B preparation (18) overlaps Block A concrete pour (14) across a staggered 39-day 6-block cycle."
+                        ]
+                    },
+                    {
+                        number: "Minutes of Meeting 02 — Zone 1 Wages & Labour Supply Contract",
+                        assetKey: "ps5_mom2",
+                        image: "ps5_mom2.jpeg",
+                        tempImage: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=900&q=80",
+                        dateTime: "Scheduled Session • Legal & Commercial Review",
+                        venue: "Civil Engineering Department, KLE Technological University, Hubballi",
+                        points: [
+                            "Cross-checked November 2026 market rates against Karnataka Government Zone 1 notification (22 May 2026): raised helper budget from ₹829/day market average to the ₹899.09/day statutory unskilled floor.",
+                            "Computed direct trade labour cost at ₹1,20,301.58 per block (91.5 person-days) and ₹7,21,809.48 (≈₹7.22 lakh) for all 6 blocks.",
+                            "Drafted the 12-clause Labour Supply Agreement and 6 technical annexures aligned with India's four Labour Codes (effective 21 Nov 2025)."
+                        ]
+                    }
+                ],
+                solutionsHTML: `
+                    <!-- Staggered Block Overlap & Peak/Slack Histogram SVG -->
+                    <div class="bg-white/85 border border-stoneBorder rounded-xl p-5 sm:p-7 shadow-sm">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                            <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-charcoal">A. Staggered 6-Block Programme & Peak vs. Slack Manpower Histogram</h3>
+                            <span class="text-[11px] font-mono bg-stoneCard px-2.5 py-0.5 rounded border border-stoneBorder">Peak: 32 • Slack: 3 • 39-Day Cycle</span>
+                        </div>
+
+                        <div class="w-full overflow-x-auto pb-3 mb-6">
+                            <svg viewBox="0 0 920 260" class="w-full min-w-[700px] h-auto" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="10" y="10" width="900" height="240" rx="10" fill="#F4F1EA" stroke="#DCD5C9"/>
+                                <text x="30" y="34" fill="#231F1D" font-size="11" font-weight="bold" font-family="monospace">STAGGERED 6-BLOCK WORKFORCE OVERLAP (5d Prep [18] → 1d Pour [14] → 3d Curing [3])</text>
+
+                                <!-- Block 1 Bar -->
+                                <text x="30" y="64" fill="#231F1D" font-size="10.5" font-weight="bold">Block 1</text>
+                                <rect x="105" y="49" width="140" height="20" rx="4" fill="#3A3532"/><text x="175" y="63" fill="#FFF" font-size="9" text-anchor="middle">D1–5: Prep (18)</text>
+                                <rect x="248" y="49" width="55" height="20" rx="4" fill="#991B1B"/><text x="275" y="63" fill="#FFF" font-size="9" font-weight="bold" text-anchor="middle">D6 (14)</text>
+                                <rect x="306" y="49" width="85" height="20" rx="4" fill="#D8CFC2"/><text x="348" y="63" fill="#231F1D" font-size="9" text-anchor="middle">D7–9: Cure (3)</text>
+
+                                <!-- Block 2 Bar -->
+                                <text x="30" y="92" fill="#231F1D" font-size="10.5" font-weight="bold">Block 2</text>
+                                <rect x="248" y="77" width="140" height="20" rx="4" fill="#3A3532"/><text x="318" y="91" fill="#FFF" font-size="9" text-anchor="middle">D7–11: Prep (18)</text>
+                                <rect x="391" y="77" width="55" height="20" rx="4" fill="#991B1B"/><text x="418" y="91" fill="#FFF" font-size="9" font-weight="bold" text-anchor="middle">D12 (14)</text>
+                                <rect x="449" y="77" width="85" height="20" rx="4" fill="#D8CFC2"/><text x="491" y="91" fill="#231F1D" font-size="9" text-anchor="middle">D13–15 (3)</text>
+
+                                <!-- Block 3 Bar -->
+                                <text x="30" y="120" fill="#231F1D" font-size="10.5" font-weight="bold">Block 3</text>
+                                <rect x="391" y="105" width="140" height="20" rx="4" fill="#3A3532"/><text x="461" y="119" fill="#FFF" font-size="9" text-anchor="middle">D13–17: Prep (18)</text>
+                                <rect x="534" y="105" width="55" height="20" rx="4" fill="#991B1B"/><text x="561" y="119" fill="#FFF" font-size="9" font-weight="bold" text-anchor="middle">D18 (14)</text>
+                                <rect x="592" y="105" width="85" height="20" rx="4" fill="#D8CFC2"/><text x="634" y="119" fill="#231F1D" font-size="9" text-anchor="middle">D19–21 (3)</text>
+
+                                <!-- Blocks 4–6 Continuation -->
+                                <text x="30" y="148" fill="#231F1D" font-size="10.5" font-weight="bold">Blocks 4–6</text>
+                                <rect x="534" y="133" width="275" height="20" rx="4" fill="#231F1D"/><text x="671" y="147" fill="#F4F1EA" font-size="9" text-anchor="middle">D19–36: Rolling Overlap Cycles (Peak = 32 Crew)</text>
+                                <rect x="812" y="133" width="80" height="20" rx="4" fill="#D8CFC2"/><text x="852" y="147" fill="#231F1D" font-size="9" text-anchor="middle">D37–39 (3)</text>
+
+                                <!-- Peak Overlap Callout Box -->
+                                <rect x="30" y="168" width="862" height="68" rx="8" fill="#231F1D"/>
+                                <text x="50" y="191" fill="#D8CFC2" font-size="10" font-family="monospace">CONCURRENT PEAK FORMULA (BLOCK A POUR + BLOCK B PREP):</text>
+                                <text x="50" y="211" fill="#FFFFFF" font-size="11.5" font-weight="bold">Fabricators: (1 + 8) = 9  |  Carpenters: (1 + 8) = 9  |  Masons: (2 + 0) = 2  |  Unskilled Gang: (10 + 2) = 12  →  PEAK = 32 WORKERS</text>
+                                <text x="50" y="227" fill="#E5DFD5" font-size="10">Slack Curing Window: 3 Workers (1 Carpenter + 2 Helpers) • Mobile crew transferred between blocks via 2-week look-ahead.</text>
+                            </svg>
+                        </div>
+
+                        <!-- Trade-Wise Person-Days & Bengaluru Zone 1 Cost Table -->
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-charcoal mb-2.5">B. Trade-Wise Manpower & Direct Labour Cost Estimate (Bengaluru Zone 1 Rates)</h4>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-xs border border-stoneBorder rounded-lg overflow-hidden">
+                                <thead class="bg-charcoal text-stoneBg uppercase tracking-wider">
+                                    <tr>
+                                        <th class="px-3 py-2 text-left">Trade / Category</th>
+                                        <th class="px-3 py-2 text-left">Productivity Norm</th>
+                                        <th class="px-3 py-2 text-right">Person-Days / Block</th>
+                                        <th class="px-3 py-2 text-right">Budget Wage (₹/day)</th>
+                                        <th class="px-3 py-2 text-right">Cost / Block (₹)</th>
+                                        <th class="px-3 py-2 text-right">6-Block Cost (₹)</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-stoneBorder bg-white font-mono">
+                                    <tr>
+                                        <td class="px-3 py-2 font-sans font-semibold">Fabricators (Bar Benders)</td>
+                                        <td class="px-3 py-2 font-sans">100 kg/day (4,000 kg/block)</td>
+                                        <td class="px-3 py-2 text-right">40.0</td>
+                                        <td class="px-3 py-2 text-right">₹1,300.00</td>
+                                        <td class="px-3 py-2 text-right">₹52,000.00</td>
+                                        <td class="px-3 py-2 text-right">₹3,12,000.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-3 py-2 font-sans font-semibold">Carpenters (Shuttering)</td>
+                                        <td class="px-3 py-2 font-sans">6 m²/day (225 m²/block)</td>
+                                        <td class="px-3 py-2 text-right">37.5</td>
+                                        <td class="px-3 py-2 text-right">₹1,475.00</td>
+                                        <td class="px-3 py-2 text-right">₹55,312.50</td>
+                                        <td class="px-3 py-2 text-right">₹3,31,875.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-3 py-2 font-sans font-semibold">Masons (Finishing)</td>
+                                        <td class="px-3 py-2 font-sans">2 masons × 1 pour day</td>
+                                        <td class="px-3 py-2 text-right">2.0</td>
+                                        <td class="px-3 py-2 text-right">₹1,100.00</td>
+                                        <td class="px-3 py-2 text-right">₹2,200.00</td>
+                                        <td class="px-3 py-2 text-right">₹13,200.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-3 py-2 font-sans font-semibold">Unskilled Concrete Gang</td>
+                                        <td class="px-3 py-2 font-sans">10 pour + 2 prep helpers</td>
+                                        <td class="px-3 py-2 text-right">12.0</td>
+                                        <td class="px-3 py-2 text-right">₹899.09*</td>
+                                        <td class="px-3 py-2 text-right">₹10,789.08</td>
+                                        <td class="px-3 py-2 text-right">₹64,734.48</td>
+                                    </tr>
+                                    <tr class="bg-stoneCard font-bold text-charcoal">
+                                        <td class="px-3 py-2.5 font-sans">TOTAL DIRECT LABOUR</td>
+                                        <td class="px-3 py-2.5 font-sans">50 m³/block (300 m³ total)</td>
+                                        <td class="px-3 py-2.5 text-right">91.5</td>
+                                        <td class="px-3 py-2.5 text-right">—</td>
+                                        <td class="px-3 py-2.5 text-right">₹1,20,301.58</td>
+                                        <td class="px-3 py-2.5 text-right">₹7,21,809.48</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="text-[11px] text-taupe mt-2">*Helper rate raised from ₹829/day market average to Karnataka Zone 1 statutory unskilled floor (₹899.09/day; skilled floor ₹1,087.90/day).</p>
+                    </div>
+
+                    <!-- Labour Supply Contract & Statutory Compliance -->
+                    <div class="bg-white/85 border border-stoneBorder rounded-xl p-5 sm:p-7 shadow-sm">
+                        <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-charcoal mb-4">C. Labour Supply Contract Clauses & Four Labour Codes Compliance</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                            <div class="p-4 rounded-lg border border-stoneBorder bg-stoneBg/50">
+                                <h4 class="font-bold text-charcoal mb-1.5">12 Mandatory Contract Clauses & 6 Annexures</h4>
+                                <p class="text-charcoalSoft leading-relaxed mb-2">
+                                    Covers: (1) Parties & GST/PAN/CLRA licenses, (2) Scope & drawings, (3) Trade-wise minimum/peak manpower schedule & replacement SLA, (4) Statutory wage/VDA & overtime compliance, (5) Biometric/muster attendance & DPR certification, (6) Monthly payment & lawful retention, (7) Safety induction, PPE & welfare, (8) Quality hold points & rework liability, (9) EPF/ESI & Employee Compensation insurance, (10) Wage-slip/bank-proof audit rights, (11) Indemnity, and (12) Immediate safety termination.
+                                </p>
+                                <p class="text-charcoalSoft"><strong>Annexures A–F:</strong> Weekly Manpower Schedule, Wage Declaration, Scope/Method Statements, PPE Matrix, Attendance/Billing Formats, and Statutory Registrations.</p>
+                            </div>
+                            <div class="p-4 rounded-lg border border-stoneBorder bg-stoneBg/50">
+                                <h4 class="font-bold text-charcoal mb-1.5">India Four Labour Codes & Workforce Optimization</h4>
+                                <ul class="list-disc pl-4 space-y-1 text-charcoalSoft">
+                                    <li><strong>Statutory Alignment:</strong> Verified against the four Labour Codes (effective 21 Nov 2025: Code on Wages, OSH Code, Social Security Code, IR Code), BOCW welfare cess, age verification (no child/forced labour), and Karnataka Zone 1 wage notifications.</li>
+                                    <li><strong>Site Control Strategy:</strong> Maintain a core crew, mobilize peak gangs via a 2-week look-ahead schedule, track daily kg/m²/m³ output histograms, and transfer slack crews across blocks without ever compromising safe concrete-placing crew size.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                reflections: [
+                    "Gained practical understanding of deriving trade-wise manpower (fabricators, carpenters, masons, and concrete gang) from measurable BOQ quantities and output norms rather than guesswork.",
+                    "Learned how overlapping block schedules create sharp peak demands (32 workers) versus slack curing periods (3 workers), requiring a core crew plus 2-week look-ahead mobilization.",
+                    "Understood the legal distinction between informal market wage listings and statutory Zone 1 minimum wage floors under Karnataka notifications and India's four Labour Codes.",
+                    "Learned how structured Labour Supply Agreements with biometric attendance, PPE matrices, and EPF/ESI audit clauses protect the principal employer from statutory default.",
+                    "Connected classroom quantity take-off and bar-chart scheduling with real-world labour productivity tracking and site safety governance."
+                ],
+                conclusions: [
+                    "Workforce planning must be stage-driven: 18 workers during preparation, 14 on pour day, 3 during curing, and a peak of 32 during concurrent two-block overlap.",
+                    "Benchmarking against Bengaluru Zone 1 statutory floors yields a direct labour cost of ₹1.20 lakh per block (₹7.22 lakh for six blocks) in the illustrative model.",
+                    "Maintaining a small mobile core crew, tracking daily output histograms, and redeploying slack workers prevents both schedule delays and idle wage losses.",
+                    "A comprehensive written Labour Supply Contract with technical annexures ensures statutory wage compliance, social security coverage, and safe site execution."
+                ]
+            },
+            {
+                id: 6,
+                code: "PS — 06",
+                shortTitle: "RMC Cube Failure & QA/QC",
+                title: "28-Day Concrete Cube Failure Investigation & QA/QC Prevention Plan",
+                theme: "Theme: To demonstrate the importance of various tests conducted on site and the ramifications of the failure of material tests (23 of 56 columns failed 28-day strength).",
+                status: "Completed Record",
+                scale: "106 Footings Passed • 23/56 Columns Failed",
+                heroImg: "https://images.unsplash.com/photo-1590486803833-1c5dc8ddd4c8?auto=format&fit=crop&w=1000&q=80",
+                metrics: [
+                    { label: "Footings Passed", value: "106 / 106" },
+                    { label: "Columns Failed", value: "23 / 56 (41%)" },
+                    { label: "Contract Clause", value: "RMC Rework Liability" }
+                ],
+                questionHTML: `
+                    <p>RCC work is in progress and has reached the ground floor level in 3 blocks using local RMC. Out of <strong>106 footings</strong> cast, all 106 attained the required strength. However, out of <strong>56 columns</strong> cast, <strong>23 failed</strong> the 28-day compressive strength test. Although the RMC owner has a contract clause bearing demolition and rebuild expenses for strength failure, they allege a site concreting mistake.</p>
+                    <ul class="list-disc pl-5 space-y-1.5 text-xs sm:text-sm">
+                        <li><strong>Objectives of the Study:</strong> Investigate all possible reasons for concrete cube test failure across the RMC plant, construction site, and sampling/testing stages.</li>
+                        <li>Understand the mutual responsibilities of the RMC supplier and site engineering team, and study concrete testing and quality control procedures.</li>
+                        <li>Establish preventive measures before, during, and after concreting, alongside an investigation flowchart to ensure required concrete strength and durability.</li>
+                    </ul>
+                `,
+                meetings: [
+                    {
+                        number: "Minutes of Meeting 01 — Root-Cause Audit & Failure Investigation",
+                        assetKey: "ps6_mom1",
+                        image: "ps6_mom1.jpeg",
+                        tempImage: "https://images.unsplash.com/photo-1590486803833-1c5dc8ddd4c8?auto=format&fit=crop&w=900&q=80",
+                        dateTime: "Scheduled Session • QA/QC Review",
+                        venue: "Civil Engineering Department, KLE Technological University, Hubballi",
+                        points: [
+                            "Analyzed why all 106 footings passed while 23 of 56 columns failed 28-day compressive strength despite using the same local RMC vendor.",
+                            "Categorized failure sources into three buckets: RMC Plant issues (cement content, moisture variation, w/c ratio, transit time), Site execution issues (uncontrolled water addition, high free fall in columns, inadequate vibration, leakage, poor curing), and Cube Sampling/Testing errors.",
+                            "Structured the 5-step Column Investigation Protocol combining batch-ticket mapping with Rebound Hammer, Ultrasonic Pulse Velocity (UPV), and Core Testing."
+                        ]
+                    },
+                    {
+                        number: "Minutes of Meeting 02 — Preventive Controls & Supplier Governance",
+                        assetKey: "ps6_mom2",
+                        image: "ps6_mom2.jpeg",
+                        tempImage: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=900&q=80",
+                        dateTime: "Scheduled Session • QA/QC Review",
+                        venue: "Civil Engineering Department, KLE Technological University, Hubballi",
+                        points: [
+                            "Defined mandatory Pre-Concreting (Pour Card, mix verification, vibrator readiness), During-Concreting (gate slump check, zero site water addition, layered pouring), and Post-Concreting (curing & test registers) controls.",
+                            "Specified RMC supplier responsibilities: weigh-batcher calibration, aggregate moisture correction, sealed transit records, and joint sampling/testing.",
+                            "Drafted the 9-step Concrete Cube Test Failure Investigation Flowchart for structural engineer evaluation and corrective action."
+                        ]
+                    }
+                ],
+                solutionsHTML: `
+                    <!-- 9-Step Investigation Flowchart SVG -->
+                    <div class="bg-white/85 border border-stoneBorder rounded-xl p-5 sm:p-7 shadow-sm">
+                        <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                            <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-charcoal">A. Investigation Flowchart — Concrete Cube Test Failure</h3>
+                            <span class="text-[11px] font-mono bg-stoneCard px-2.5 py-0.5 rounded border border-stoneBorder">9-STEP QA/QC & NDT PROTOCOL</span>
+                        </div>
+
+                        <div class="w-full overflow-x-auto pb-3 mb-6">
+                            <svg viewBox="0 0 920 340" class="w-full min-w-[700px] h-auto" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <marker id="arr6" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                                        <path d="M 0 1 L 10 5 L 0 9 z" fill="#231F1D"/>
+                                    </marker>
+                                </defs>
+                                <!-- Row 1: Steps 1 -> 2 -> 3 -->
+                                <rect x="20" y="20" width="250" height="68" rx="8" fill="#FEE2E2" stroke="#991B1B" stroke-width="1.5"/>
+                                <text x="145" y="45" fill="#991B1B" font-size="11.5" font-weight="bold" text-anchor="middle">1. Concrete Cube Test Failure</text>
+                                <text x="145" y="65" fill="#7F1D1D" font-size="10" text-anchor="middle">(23/56 Columns below specified strength)</text>
+                                <line x1="270" y1="54" x2="325" y2="54" stroke="#231F1D" stroke-width="2" marker-end="url(#arr6)"/>
+
+                                <rect x="330" y="20" width="250" height="68" rx="8" fill="#FEF3C7" stroke="#B45309" stroke-width="1.5"/>
+                                <text x="455" y="45" fill="#78350F" font-size="11.5" font-weight="bold" text-anchor="middle">2. Review Cube Test Reports</text>
+                                <text x="455" y="65" fill="#78350F" font-size="10" text-anchor="middle">(Check 7/28-day results & cube IDs)</text>
+                                <line x1="580" y1="54" x2="635" y2="54" stroke="#231F1D" stroke-width="2" marker-end="url(#arr6)"/>
+
+                                <rect x="640" y="20" width="255" height="68" rx="8" fill="#EBE6DC" stroke="#231F1D" stroke-width="1.5"/>
+                                <text x="767" y="45" fill="#231F1D" font-size="11.5" font-weight="bold" text-anchor="middle">3. Check RMC Batch & Delivery Records</text>
+                                <text x="767" y="65" fill="#3A3532" font-size="10" text-anchor="middle">(Verify grade, quantity, time & mix design)</text>
+
+                                <!-- Connector Row 1 to Row 2 -->
+                                <line x1="767" y1="88" x2="767" y2="122" stroke="#231F1D" stroke-width="2" marker-end="url(#arr6)"/>
+
+                                <!-- Row 2: Steps 6 <- 5 <- 4 -->
+                                <rect x="640" y="126" width="255" height="68" rx="8" fill="#EBE6DC" stroke="#231F1D" stroke-width="1.5"/>
+                                <text x="767" y="151" fill="#231F1D" font-size="11.5" font-weight="bold" text-anchor="middle">4. Inspect Sampling, Casting & Curing</text>
+                                <text x="767" y="171" fill="#3A3532" font-size="10" text-anchor="middle">(Check mould compaction & curing tank)</text>
+                                <line x1="640" y1="160" x2="585" y2="160" stroke="#231F1D" stroke-width="2" marker-end="url(#arr6)"/>
+
+                                <rect x="330" y="126" width="250" height="68" rx="8" fill="#EBE6DC" stroke="#231F1D" stroke-width="1.5"/>
+                                <text x="455" y="151" fill="#231F1D" font-size="11.5" font-weight="bold" text-anchor="middle">5. Inspect Column Concreting</text>
+                                <text x="455" y="171" fill="#3A3532" font-size="10" text-anchor="middle">(Check placement, vibration & site logs)</text>
+                                <line x1="330" y1="160" x2="275" y2="160" stroke="#231F1D" stroke-width="2" marker-end="url(#arr6)"/>
+
+                                <rect x="20" y="126" width="250" height="68" rx="8" fill="#231F1D"/>
+                                <text x="145" y="151" fill="#FFFFFF" font-size="11.5" font-weight="bold" text-anchor="middle">6. Structural Engineer Assessment</text>
+                                <text x="145" y="171" fill="#D8CFC2" font-size="10" text-anchor="middle">(Evaluate test results & affected columns)</text>
+
+                                <!-- Connector Row 2 to Row 3 -->
+                                <line x1="145" y1="194" x2="145" y2="232" stroke="#231F1D" stroke-width="2" marker-end="url(#arr6)"/>
+
+                                <!-- Row 3: Step 7 Decision -> Step 8 (Yes) -> Step 9 (Action) -->
+                                <rect x="20" y="236" width="250" height="76" rx="8" fill="#EDE9FE" stroke="#5B21B6" stroke-width="1.5"/>
+                                <text x="145" y="262" fill="#4C1D95" font-size="11.5" font-weight="bold" text-anchor="middle">7. Is Additional Testing Required?</text>
+                                <text x="145" y="282" fill="#5B21B6" font-size="10" text-anchor="middle">(Rebound Hammer / UPV / Core Testing)</text>
+
+                                <!-- YES arrow to Step 8 -->
+                                <line x1="270" y1="274" x2="345" y2="274" stroke="#231F1D" stroke-width="2" marker-end="url(#arr6)"/>
+                                <text x="307" y="266" fill="#166534" font-size="10" font-weight="bold" text-anchor="middle">YES</text>
+
+                                <rect x="350" y="236" width="230" height="76" rx="8" fill="#FEF3C7" stroke="#B45309" stroke-width="1.5"/>
+                                <text x="465" y="262" fill="#78350F" font-size="11.5" font-weight="bold" text-anchor="middle">8. Conduct Additional Testing</text>
+                                <text x="465" y="282" fill="#78350F" font-size="10" text-anchor="middle">(NDT & Core extraction as recommended)</text>
+
+                                <!-- Arrow Step 8 to Step 9 -->
+                                <line x1="580" y1="274" x2="635" y2="274" stroke="#231F1D" stroke-width="2" marker-end="url(#arr6)"/>
+
+                                <rect x="640" y="236" width="255" height="76" rx="8" fill="#DCFCE7" stroke="#166534" stroke-width="1.5"/>
+                                <text x="767" y="262" fill="#166534" font-size="11.5" font-weight="bold" text-anchor="middle">9. Corrective Action & Improvement</text>
+                                <text x="767" y="282" fill="#14532D" font-size="10" text-anchor="middle">(Repair / Jacketing / Rebuild & SOP audit)</text>
+                            </svg>
+                        </div>
+
+                        <!-- 3.1 to 3.3 Root Cause Matrix -->
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-charcoal mb-2.5">B. Root-Cause Diagnosis: RMC Plant vs. Construction Site vs. Cube Sampling</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+                            <div class="p-4 rounded-lg border border-stoneBorder bg-stoneBg/60">
+                                <span class="text-[10px] font-mono uppercase tracking-wider text-taupe">Section 3.1</span>
+                                <h5 class="font-bold text-charcoal text-sm mt-0.5 mb-2">Possible Causes at the RMC Plant</h5>
+                                <ul class="list-disc pl-4 space-y-1 text-charcoalSoft leading-relaxed">
+                                    <li>Incorrect cement content or uncalibrated weigh-batchers.</li>
+                                    <li>Aggregate moisture variation without water adjustment.</li>
+                                    <li>Improper batching or incorrect water-cement (w/c) ratio.</li>
+                                    <li>Wrong concrete grade dispatched for columns vs. footings.</li>
+                                    <li>Insufficient drum mixing or excessive transit time causing initial set.</li>
+                                </ul>
+                            </div>
+                            <div class="p-4 rounded-lg border border-stoneBorder bg-stoneBg/60">
+                                <span class="text-[10px] font-mono uppercase tracking-wider text-taupe">Section 3.2</span>
+                                <h5 class="font-bold text-charcoal text-sm mt-0.5 mb-2">Possible Causes at the Construction Site</h5>
+                                <ul class="list-disc pl-4 space-y-1 text-charcoalSoft leading-relaxed">
+                                    <li><strong>Uncontrolled water addition</strong> (retempering) at site to boost workability in congested column cages.</li>
+                                    <li>Excessive free fall (&gt;1.5 m) causing coarse aggregate segregation.</li>
+                                    <li>Inadequate needle vibration or honeycombing due to dense reinforcement and column height.</li>
+                                    <li>Leaking formwork joints (cement slurry loss) or delayed/improper curing.</li>
+                                </ul>
+                            </div>
+                            <div class="p-4 rounded-lg border border-stoneBorder bg-stoneBg/60">
+                                <span class="text-[10px] font-mono uppercase tracking-wider text-taupe">Section 3.3</span>
+                                <h5 class="font-bold text-charcoal text-sm mt-0.5 mb-2">Possible Causes in Cube Sampling & Testing</h5>
+                                <ul class="list-disc pl-4 space-y-1 text-charcoalSoft leading-relaxed">
+                                    <li>Non-representative sampling (taking first or last discharge).</li>
+                                    <li>Incorrect cube casting or inadequate 3-layer tamping/compaction.</li>
+                                    <li>Dry/improper curing temperature or disturbed demoulding.</li>
+                                    <li>Rough handling, uncalibrated CTM platens, or incorrect cube labeling/mix-up.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sections 3.4 to 3.8 Investigation & Preventive Controls -->
+                    <div class="bg-white/85 border border-stoneBorder rounded-xl p-5 sm:p-7 shadow-sm space-y-5">
+                        <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-charcoal">C. Failed Column Investigation (3.4), Preventive Controls (3.5–3.7) & RMC Responsibilities (3.8)</h3>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                            <div class="p-4 rounded-lg border border-stoneBorder bg-stoneCard/40">
+                                <h4 class="font-bold text-charcoal text-sm mb-2">3.4 Five-Step Investigation of the 23 Failed Columns</h4>
+                                <ol class="list-decimal pl-4 space-y-1.5 text-charcoalSoft leading-relaxed">
+                                    <li><strong>Collect Records:</strong> Gather all RMC delivery tickets, batch logs, gate slump records, and 28-day test reports.</li>
+                                    <li><strong>Map Failed Columns:</strong> Link each failed column to its exact truck number, pour date, block, and concrete batch to spot patterns.</li>
+                                    <li><strong>Preliminary NDT:</strong> Perform Rebound Hammer and Ultrasonic Pulse Velocity (UPV) tests on all 23 affected columns.</li>
+                                    <li><strong>Core Testing:</strong> Extract and test cylindrical concrete cores if NDT indicates suspect in-situ strength.</li>
+                                    <li><strong>Structural Decision:</strong> Structural engineer evaluates core/NDT data to prescribe epoxy grouting, micro-concrete jacketing, load testing, or demolition/rebuilding.</li>
+                                </ol>
+                            </div>
+
+                            <div class="p-4 rounded-lg border border-stoneBorder bg-stoneCard/40">
+                                <h4 class="font-bold text-charcoal text-sm mb-2">3.8 Responsibilities & Precautions for the RMC Supplier</h4>
+                                <ul class="list-disc pl-4 space-y-1.5 text-charcoalSoft leading-relaxed">
+                                    <li>Maintain automated batching printouts, calibrated load cells, and raw material gradation/moisture records.</li>
+                                    <li>Apply real-time aggregate moisture corrections and lock transit mixer water tanks before dispatch.</li>
+                                    <li>Issue complete delivery tickets with batch time, grade, and admixture dosage for every load.</li>
+                                    <li>Participate in <strong>joint witness sampling, cube casting, and testing</strong> at the site gate to eliminate disputes over testing validity.</li>
+                                    <li>Report any failed 7-day early indicators immediately and conduct joint root-cause audits.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs pt-1">
+                            <div class="p-4 rounded-lg border border-stoneBorder bg-stoneBg/50">
+                                <h4 class="font-bold text-charcoal mb-1.5">3.5 Preventive Measures Before Concreting</h4>
+                                <ul class="list-disc pl-4 space-y-1 text-charcoalSoft">
+                                    <li>Approve Pour Card & verify concrete grade/mix design.</li>
+                                    <li>Audit RMC supplier calibration & material records.</li>
+                                    <li>Inspect column reinforcement cover, ties & watertight shuttering.</li>
+                                    <li>Verify standby needle vibrators, pumps & calibrated cube moulds.</li>
+                                </ul>
+                            </div>
+                            <div class="p-4 rounded-lg border border-stoneBorder bg-stoneBg/50">
+                                <h4 class="font-bold text-charcoal mb-1.5">3.6 Preventive Measures During Concreting</h4>
+                                <ul class="list-disc pl-4 space-y-1 text-charcoalSoft">
+                                    <li>Verify delivery ticket grade, batch time & gate slump test.</li>
+                                    <li>Strictly prohibit uncontrolled water addition at site.</li>
+                                    <li>Pour columns in controlled lifts (&le;1.5 m drop) with thorough vibration.</li>
+                                    <li>Cast, compact, demould & label test cubes per IS 516 standards.</li>
+                                </ul>
+                            </div>
+                            <div class="p-4 rounded-lg border border-stoneBorder bg-stoneBg/50">
+                                <h4 class="font-bold text-charcoal mb-1.5">3.7 Preventive Measures After Concreting</h4>
+                                <ul class="list-disc pl-4 space-y-1 text-charcoalSoft">
+                                    <li>Ensure continuous wet hessian/curing compound application on columns.</li>
+                                    <li>Cure test specimens in temperature-controlled curing tanks.</li>
+                                    <li>Test cubes at 7 & 28 days and maintain block-wise test registers.</li>
+                                    <li>Escalate any low 7-day result immediately to PM & Structural Engineer.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                reflections: [
+                    "Through this problem statement, I understood the importance of concrete quality control and compressive strength testing in construction, learning that cube test failure may occur due to problems at the RMC plant, during transportation, at the construction site, or during sampling and testing.",
+                    "I understood the importance of checking concrete delivery records, proper placement, compaction, curing, and testing, as well as why column pours require stricter slump and vibration discipline than mass footings.",
+                    "I also learned that the structural engineer plays an important role in investigating concrete strength failure through NDT (Rebound Hammer, UPV, Core Testing) and deciding suitable corrective measures.",
+                    "This problem helped me understand the importance of quality management, teamwork, joint witness documentation, and responsible decision-making in construction projects."
+                ],
+                conclusions: [
+                    "Concrete cube test failure in columns requires proper investigation to identify the possible causes and ensure structural safety; the failure should be evaluated using concrete test reports, delivery records, site inspection, and suitable additional testing.",
+                    "Proper batching, transportation, placing, compaction, curing, sampling, and testing procedures are essential to prevent concrete strength problems.",
+                    "The RMC supplier and site team should maintain proper quality control, joint witness sampling, and delivery documentation to resolve disputes based on objective evidence.",
+                    "Corrective measures—whether repair, structural jacketing, or rebuilding—should be implemented strictly based on the structural engineer's assessment to ensure safe and durable construction."
+                ]
+            }
+        ];
+
+        let currentProblemIndex = 0;
+
+        // Render the 6 selector cards
+        function renderSelectorCards() {
+            const grid = document.getElementById('problem-cards-grid');
+            grid.innerHTML = portfolioData.map((item, idx) => {
+                const isActive = idx === currentProblemIndex;
+                return `
+                    <button onclick="selectProblem(${idx})" class="text-left rounded-xl p-3.5 border transition-all flex flex-col justify-between min-h-[120px] ${
+                        isActive
+                        ? 'bg-charcoal text-stoneBg border-charcoal shadow-md scale-[1.01]'
+                        : 'bg-white/80 hover:bg-stoneCard text-charcoal border-stoneBorder'
+                    }">
+                        <div class="flex items-center justify-between gap-1 mb-2">
+                            <span class="text-[10px] font-mono uppercase tracking-widest ${isActive ? 'text-sand' : 'text-taupe'}">${item.code}</span>
+                            <span class="w-2 h-2 rounded-full ${item.status.includes('Completed') ? 'bg-emerald-500' : 'bg-amber-400'}"></span>
+                        </div>
+                        <p class="font-display text-sm sm:text-base uppercase font-bold leading-snug tracking-tight line-clamp-2">
+                            ${item.shortTitle}
+                        </p>
+                    </button>
+                `;
+            }).join('');
+        }
+
+        // Populate active workspace for selected Problem Statement
+        function selectProblem(index) {
+            currentProblemIndex = index;
+            const data = portfolioData[index];
+            renderSelectorCards();
+
+            // Breadcrumbs & Header Metadata
+            document.getElementById('breadcrumb-theme').textContent = data.shortTitle;
+            document.getElementById('breadcrumb-id').textContent = `Problem Statement 0${data.id}`;
+            document.getElementById('ps-hero-img').src = data.heroImg;
+            document.getElementById('ps-badge').textContent = data.code;
+            document.getElementById('ps-scale').textContent = data.scale;
+            document.getElementById('ps-tag').textContent = `Module 0${data.id}`;
+            document.getElementById('ps-title').textContent = data.title;
+            document.getElementById('ps-theme').textContent = data.theme;
+
+            const statusEl = document.getElementById('ps-status');
+            statusEl.textContent = data.status;
+            if (data.status.includes('Completed')) {
+                statusEl.className = 'text-xs font-medium text-emerald-800 bg-emerald-100/80 border border-emerald-300 px-2.5 py-1 rounded';
+            } else {
+                statusEl.className = 'text-xs font-medium text-amber-800 bg-amber-100/80 border border-amber-300 px-2.5 py-1 rounded';
+            }
+
+            // Metrics Grid
+            document.getElementById('ps-metrics-grid').innerHTML = data.metrics.map(m => `
+                <div class="bg-white/80 border border-stoneBorder rounded-lg p-3">
+                    <span class="text-[10px] uppercase tracking-wider text-taupe block">${m.label}</span>
+                    <span class="font-display text-base sm:text-lg font-bold text-charcoal">${m.value}</span>
+                </div>
+            `).join('');
+
+            // Section 1: Problem Statement Brief
+            document.getElementById('ps-question-body').innerHTML = data.questionHTML;
+
+            // Section 2: Minutes of Meeting
+            document.getElementById('mom-container').innerHTML = data.meetings.map(m => {
+                const customPath = (m.assetKey && IMAGE_ASSETS[m.assetKey]) ? IMAGE_ASSETS[m.assetKey].trim() : "";
+                const fallbackImg = m.tempImage || `https://placehold.co/900x560/3A3532/F4F1EA?text=${encodeURIComponent(m.number)}`;
+                const activeSrc = customPath || fallbackImg;
+
+                return `
+                <article class="bg-stoneCard/55 border border-stoneBorder rounded-xl overflow-hidden shadow-sm flex flex-col">
+                    <div
+                        onclick="openModal(this.querySelector('img').src, '${m.number}')"
+                        class="relative aspect-[16/10] bg-charcoalSoft cursor-zoom-in group overflow-hidden"
+                    >
+                        <img
+                            src="${activeSrc}"
+                            onerror="this.onerror=null;this.src='${fallbackImg}';"
+                            alt="${m.number}"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        >
+                        <div class="absolute bottom-3 right-3 bg-charcoal/85 text-stoneBg text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 rounded">
+                            Click to Enlarge
+                        </div>
+                    </div>
+                    <div class="p-5 sm:p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-display text-xl sm:text-2xl uppercase font-bold text-charcoal mb-3">${m.number}</h3>
+                            <div class="space-y-1.5 text-xs bg-stoneBg/90 border border-stoneBorder rounded-lg p-3 mb-4">
+                                <p><strong class="text-charcoal uppercase tracking-wider">Date & Time:</strong> <span class="text-charcoalSoft">${m.dateTime}</span></p>
+                                <p><strong class="text-charcoal uppercase tracking-wider">Venue:</strong> <span class="text-charcoalSoft">${m.venue}</span></p>
+                            </div>
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-charcoal mb-2">Key Points Discussed:</h4>
+                            <ul class="list-disc pl-4 space-y-1.5 text-xs sm:text-sm text-charcoalSoft leading-relaxed">
+                                ${m.points.map(pt => `<li>${pt}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+            `;
+            }).join('');
+
+            // Section 3: Technical Solutions
+            document.getElementById('solutions-container').innerHTML = data.solutionsHTML;
+
+            // Section 4: Reflection
+            document.getElementById('reflection-list').innerHTML = data.reflections.map(r => `
+                <li class="flex items-start gap-2.5">
+                    <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-charcoal shrink-0"></span>
+                    <span>${r}</span>
+                </li>
+            `).join('');
+
+            // Section 5: Conclusion
+            document.getElementById('conclusion-list').innerHTML = data.conclusions.map(c => `
+                <li class="flex items-start gap-2.5">
+                    <span class="mt-1.5 w-1.5 h-1.5 rounded-full bg-sand shrink-0"></span>
+                    <span>${c}</span>
+                </li>
+            `).join('');
+        }
+
+        function navigateProblem(delta) {
+            const nextIndex = (currentProblemIndex + delta + portfolioData.length) % portfolioData.length;
+            selectProblem(nextIndex);
+            document.getElementById('active-workspace').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function switchPage(page) {
+            const portfolioPage = document.getElementById('portfolio-page');
+            const aboutPage = document.getElementById('about-page');
+            const navPortfolio = document.getElementById('nav-portfolio');
+            const navAbout = document.getElementById('nav-about');
+
+            if (page === 'about') {
+                portfolioPage.classList.add('hidden');
+                aboutPage.classList.remove('hidden');
+                navAbout.classList.add('border-charcoal', 'text-charcoal');
+                navAbout.classList.remove('border-transparent', 'text-taupe');
+                navPortfolio.classList.remove('border-charcoal', 'text-charcoal');
+                navPortfolio.classList.add('border-transparent', 'text-taupe');
+            } else {
+                aboutPage.classList.add('hidden');
+                portfolioPage.classList.remove('hidden');
+                navPortfolio.classList.add('border-charcoal', 'text-charcoal');
+                navPortfolio.classList.remove('border-transparent', 'text-taupe');
+                navAbout.classList.remove('border-charcoal', 'text-charcoal');
+                navAbout.classList.add('border-transparent', 'text-taupe');
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function openModal(src, caption) {
+            document.getElementById('modal-img').src = src;
+            document.getElementById('modal-caption').textContent = caption;
+            document.getElementById('image-modal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('image-modal').classList.add('hidden');
+        }
+
+        window.onload = function() {
+            if (IMAGE_ASSETS.aboutProfile && IMAGE_ASSETS.aboutProfile.trim() !== "") {
+                const aboutImg = document.getElementById('about-profile-img');
+                if (aboutImg) aboutImg.src = IMAGE_ASSETS.aboutProfile.trim();
+            }
+            selectProblem(0);
+        };
+    </script>
+</body>
+</html>
